@@ -319,4 +319,35 @@ void main() {
       expect(find.text('Explore Recipes'), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'SplashScreen renders with 3D logo, floating objects, title, and progress bar',
+    (WidgetTester tester) async {
+      appRouter.go('/splash');
+      await tester.pumpWidget(const ProviderScope(child: CookMateApp()));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Verify title, tagline, skip button, and floating emojis
+      expect(tester.takeException(), isNull);
+      expect(find.text('CookMate'), findsWidgets);
+      expect(find.text('YOUR PERSONAL KITCHEN COMPANION'), findsOneWidget);
+      expect(find.text('Skip'), findsOneWidget);
+      expect(find.text('🌿'), findsOneWidget);
+      expect(find.text('🍅'), findsOneWidget);
+
+      // Advance time by 3 seconds
+      await tester.pump(const Duration(seconds: 3));
+      expect(tester.takeException(), isNull);
+
+      // Tap skip to navigate to home
+      await tester.tap(find.text('Skip'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(tester.takeException(), isNull);
+      expect(find.text('Categories'), findsOneWidget);
+    },
+  );
 }

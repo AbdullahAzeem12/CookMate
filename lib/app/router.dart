@@ -6,6 +6,7 @@ import '../features/home/presentation/home_screen.dart';
 import '../features/recipes/presentation/screens/explore_screen.dart';
 import '../features/recipes/presentation/screens/recipe_detail_screen.dart';
 import '../features/search/presentation/search_screen.dart';
+import '../features/splash/presentation/splash_screen.dart';
 import '../features/submission/presentation/screens/submit_recipe_screen.dart';
 import '../shared/widgets/empty_state.dart';
 import '../shared/widgets/responsive_scaffold.dart';
@@ -16,8 +17,15 @@ final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(
 
 final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/',
+  initialLocation: '/splash',
   routes: [
+    // Standalone Fullscreen Splash Route
+    GoRoute(
+      path: '/splash',
+      parentNavigatorKey: _rootNavigatorKey,
+      builder: (context, state) => const SplashScreen(),
+    ),
+
     // Main Stateful Shell Route for Bottom Nav / Nav Rail
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
