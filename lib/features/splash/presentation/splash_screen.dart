@@ -746,7 +746,13 @@ class _SplashScreenState extends State<SplashScreen>
       height: size,
       decoration: BoxDecoration(
         gradient: const RadialGradient(
-          colors: [Color(0xFF2D6A4F), Color(0xFF0F241D)],
+          center: Alignment(0.0, -0.2),
+          radius: 0.9,
+          colors: [
+            Color(0xFF1B4332),
+            Color(0xFF0F241D),
+            Color(0xFF07130F),
+          ],
         ),
         borderRadius: BorderRadius.circular(42),
       ),
@@ -754,18 +760,46 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.restaurant_menu_rounded,
-              size: size * 0.42,
-              color: AppColors.citrusLime,
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFFFFD166),
+                    Color(0xFFE9C46A),
+                    Color(0xFF2D6A4F),
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.citrusLime.withValues(alpha: 0.4),
+                    blurRadius: 18,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: Icon(
+                Icons.restaurant_menu_rounded,
+                size: size * 0.32,
+                color: const Color(0xFF091712),
+              ),
             ),
-            const SizedBox(height: 6),
-            const Text(
-              'CookMate',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w800,
-                fontSize: 16,
+            const SizedBox(height: 10),
+            ShaderMask(
+              shaderCallback: (bounds) => const LinearGradient(
+                colors: [Color(0xFFFFFFFF), AppColors.citrusLime],
+              ).createShader(bounds),
+              child: const Text(
+                'CookMate',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 18,
+                  letterSpacing: 0.8,
+                ),
               ),
             ),
           ],
