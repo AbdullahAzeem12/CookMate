@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen>
   // Staggered entrance animations
   late final Animation<double> _logoScale;
   late final Animation<double> _logoOpacity;
+  late final Animation<double> _logoFlip3D;
   late final Animation<double> _textOpacity;
   late final Animation<Offset> _textSlide;
   late final Animation<double> _progressOpacity;
@@ -64,6 +65,13 @@ class _SplashScreenState extends State<SplashScreen>
       CurvedAnimation(
         parent: _progressController,
         curve: const Interval(0.0, 0.12, curve: Curves.easeIn),
+      ),
+    );
+
+    _logoFlip3D = Tween<double>(begin: 0.45, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _progressController,
+        curve: const Interval(0.0, 0.22, curve: Curves.easeOutBack),
       ),
     );
 
@@ -322,7 +330,7 @@ class _SplashScreenState extends State<SplashScreen>
                             size: 42,
                           ),
 
-                          // 3D Metallic Master Logo with Specular Shine Sweep
+                          // 3D Metallic Master Logo with Specular Shine Sweep & 3D Gyro Tilt
                           AnimatedBuilder(
                             animation: _progressController,
                             builder: (context, child) {
@@ -337,20 +345,9 @@ class _SplashScreenState extends State<SplashScreen>
                             child: AnimatedBuilder(
                               animation: _floatAndShineController,
                               builder: (context, _) {
-                                final t =
-                                    _floatAndShineController.value *
-                                    2 *
-                                    math.pi;
-                                final floatY = math.sin(t) * 8.0;
-                                final floatScale =
-                                    1.0 + math.sin(t * 1.5) * 0.018;
-
-                                return Transform.translate(
-                                  offset: Offset(0, floatY),
-                                  child: Transform.scale(
-                                    scale: floatScale,
-                                    child: _buildShiny3DLogo(isCompact),
-                                  ),
+                                return _buildShiny3DLogo(
+                                  isCompact: isCompact,
+                                  entranceFlip: _logoFlip3D.value,
                                 );
                               },
                             ),
@@ -651,90 +648,152 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 
-  // 3D Logo Container with Specular Shine Effect
-  Widget _buildShiny3DLogo(bool isCompact) {
-    final logoSize = isCompact ? 190.0 : 220.0;
+  // 3D Logo Container with Specular Shine Effect, Dynamic 3D Tilt & Lens Star Glints
+  Widget _buildShiny3DLogo({
+    required bool isCompact,
+    required double entranceFlip,
+  }) {
+    final logoSize = isCompact ? 210.0 : 250.0;
+    final t = _floatAndShineController.value * 2 * math.pi;
 
-    return Container(
-      width: logoSize,
-      height: logoSize,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(42),
-        boxShadow: [
-          // Ambient Outer Emerald Glow
-          BoxShadow(
-            color: const Color(0xFF1B4332).withValues(alpha: 0.65),
-            blurRadius: 40,
-            spreadRadius: 10,
-            offset: const Offset(0, 14),
-          ),
-          // Citrus Lime Specular Glow
-          BoxShadow(
-            color: AppColors.citrusLime.withValues(alpha: 0.35),
-            blurRadius: 26,
-            spreadRadius: 2,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(42),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // The generated 3D CookMate Logo Asset
-            Image.asset(
-              'assets/images/app_logo.png',
-              width: logoSize,
-              height: logoSize,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return _buildLogoFallback(logoSize);
-              },
-            ),
+    // Rhythmic 3D gyro tilt and hover physics
+    final tiltX = math.sin(t) * 0.07 + entranceFlip;
+    final tiltY = math.cos(t * 0.8) * 0.10;
+    final tiltZ = math.sin(t * 0.4) * 0.025;
+    final floatY = math.sin(t) * 9.0;
+    final floatScale = 1.0 + math.sin(t * 1.5) * 0.018;
 
-            // Animated Specular Diagonal Shine Sweep
-            AnimatedBuilder(
-              animation: _floatAndShineController,
-              builder: (context, _) {
-                final shinePos =
-                    (_floatAndShineController.value * 2.5) - 0.75; // -0.75 to 1.75
-                return ShaderMask(
-                  blendMode: BlendMode.screen,
-                  shaderCallback: (bounds) {
-                    return LinearGradient(
-                      begin: Alignment(-1.5 + shinePos * 2.0, -1.0),
-                      end: Alignment(0.5 + shinePos * 2.0, 1.0),
-                      colors: [
-                        Colors.transparent,
-                        Colors.white.withValues(alpha: 0.05),
-                        Colors.white.withValues(alpha: 0.60),
-                        Colors.white.withValues(alpha: 0.05),
-                        Colors.transparent,
-                      ],
-                      stops: const [0.0, 0.4, 0.5, 0.6, 1.0],
-                    ).createShader(bounds);
-                  },
+    // Specular sparkle glints timed with the beam sweep
+    final sweepVal = _floatAndShineController.value;
+    final sparkle1 = (sweepVal >= 0.28 && sweepVal <= 0.58)
+        ? ((sweepVal - 0.28) / 0.30)
+        : 0.0;
+    final sparkle2 = (sweepVal >= 0.42 && sweepVal <= 0.72)
+        ? ((sweepVal - 0.42) / 0.30)
+        : 0.0;
+
+    return Transform.translate(
+      offset: Offset(0, floatY),
+      child: Transform.scale(
+        scale: floatScale,
+        child: SizedBox(
+          width: logoSize,
+          height: logoSize,
+          child: Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              // Dynamic 3D Grounding Shadow (reacts inversely to tilt)
+              Positioned(
+                bottom: -16,
+                child: Transform.translate(
+                  offset: Offset(-tiltY * 35, 0),
                   child: Container(
-                    width: logoSize,
-                    height: logoSize,
-                    color: Colors.white,
+                    width: logoSize * 0.72,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.65),
+                          blurRadius: 28,
+                          spreadRadius: 4,
+                        ),
+                        BoxShadow(
+                          color: AppColors.forestGreen.withValues(alpha: 0.35),
+                          blurRadius: 36,
+                          spreadRadius: 8,
+                        ),
+                      ],
+                    ),
                   ),
-                );
-              },
-            ),
-
-            // Glass Border Ring
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(42),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.35),
-                  width: 1.5,
                 ),
               ),
-            ),
-          ],
+
+              // 3D Perspective-Transformed Logo Emblem
+              Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.identity()
+                  ..setEntry(3, 2, 0.0016)
+                  ..rotateX(tiltX)
+                  ..rotateY(tiltY)
+                  ..rotateZ(tiltZ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Base Clean Transparent 3D Logo Asset (no square boxes)
+                    Image.asset(
+                      'assets/images/app_logo.png',
+                      width: logoSize,
+                      height: logoSize,
+                      fit: BoxFit.contain,
+                      filterQuality: FilterQuality.high,
+                      errorBuilder: (context, error, stackTrace) {
+                        return _buildLogoFallback(logoSize);
+                      },
+                    ),
+
+                    // Brilliant Specular Diagonal Shine Beam Sweep
+                    ShaderMask(
+                      blendMode: BlendMode.screen,
+                      shaderCallback: (bounds) {
+                        final shinePos =
+                            (_floatAndShineController.value * 2.8) - 0.9;
+                        return LinearGradient(
+                          begin: Alignment(-2.2 + shinePos * 2.6, -1.2),
+                          end: Alignment(-0.2 + shinePos * 2.6, 1.2),
+                          colors: [
+                            Colors.transparent,
+                            Colors.white.withValues(alpha: 0.0),
+                            AppColors.citrusLime.withValues(alpha: 0.30),
+                            Colors.white.withValues(alpha: 0.90),
+                            AppColors.citrusLime.withValues(alpha: 0.30),
+                            Colors.white.withValues(alpha: 0.0),
+                            Colors.transparent,
+                          ],
+                          stops: const [0.0, 0.34, 0.45, 0.50, 0.55, 0.66, 1.0],
+                        ).createShader(bounds);
+                      },
+                      child: Image.asset(
+                        'assets/images/app_logo.png',
+                        width: logoSize,
+                        height: logoSize,
+                        fit: BoxFit.contain,
+                        color: Colors.white,
+                        colorBlendMode: BlendMode.srcIn,
+                      ),
+                    ),
+
+                    // 1st Star Sparkle Glint on the Golden Chef Hat Crown Peak
+                    Positioned(
+                      left: logoSize * 0.44,
+                      top: logoSize * 0.22,
+                      child: CustomPaint(
+                        size: Size(logoSize * 0.26, logoSize * 0.26),
+                        painter: _StarSparklePainter(
+                          progress: sparkle1,
+                          color: const Color(0xFFFFE066),
+                        ),
+                      ),
+                    ),
+
+                    // 2nd Star Sparkle Glint on the Emerald Fork Tip
+                    Positioned(
+                      left: logoSize * 0.18,
+                      top: logoSize * 0.18,
+                      child: CustomPaint(
+                        size: Size(logoSize * 0.20, logoSize * 0.20),
+                        painter: _StarSparklePainter(
+                          progress: sparkle2,
+                          color: AppColors.citrusLime,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -808,3 +867,67 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
+
+/// Photorealistic 4-point Diamond Star Sparkle Painter
+class _StarSparklePainter extends CustomPainter {
+  final double progress; // 0.0 to 1.0
+  final Color color;
+
+  const _StarSparklePainter({
+    required this.progress,
+    required this.color,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (progress <= 0.01 || progress >= 0.99) return;
+
+    // Peak size and brightness in the middle of progress
+    final envelope = math.sin(progress * math.pi);
+    final center = Offset(size.width / 2, size.height / 2);
+    final maxRadius = (size.width / 2) * envelope;
+
+    canvas.save();
+    canvas.translate(center.dx, center.dy);
+    // Subtle rotation during twinkle
+    canvas.rotate(progress * 0.6);
+
+    // 4-point diamond star flare
+    final starPath = Path();
+    starPath.moveTo(0, -maxRadius);
+    starPath.quadraticBezierTo(0, 0, maxRadius, 0);
+    starPath.quadraticBezierTo(0, 0, 0, maxRadius);
+    starPath.quadraticBezierTo(0, 0, -maxRadius, 0);
+    starPath.quadraticBezierTo(0, 0, 0, -maxRadius);
+    starPath.close();
+
+    final starPaint = Paint()
+      ..color = color.withValues(alpha: envelope * 0.85)
+      ..style = PaintingStyle.fill;
+    canvas.drawPath(starPath, starPaint);
+
+    // Diagonal smaller rays
+    final rayPaint = Paint()
+      ..color = Colors.white.withValues(alpha: envelope * 0.9)
+      ..strokeWidth = 1.8
+      ..strokeCap = StrokeCap.round;
+
+    final diag = maxRadius * 0.52;
+    canvas.drawLine(Offset(-diag, -diag), Offset(diag, diag), rayPaint);
+    canvas.drawLine(Offset(diag, -diag), Offset(-diag, diag), rayPaint);
+
+    // Intense center core
+    final corePaint = Paint()
+      ..color = Colors.white
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.5);
+    canvas.drawCircle(Offset.zero, 3.5 * envelope, corePaint);
+
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(covariant _StarSparklePainter oldDelegate) {
+    return oldDelegate.progress != progress || oldDelegate.color != color;
+  }
+}
+
