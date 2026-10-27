@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAuthor(authorUid) {
+      return isAuthenticated() && request.auth.uid == authorUid;
+    }
+
+    // Public Approved Recipes collection
+    match /recipes/{recipeId} {
+      allow read: if true;
+      allow write: if false; // Only manageable via Firebase Admin SDK or Cloud Functions
+    }
+
+    // Recipe Submissions collection
+    match /recipe_submissions/{submissionId} {
+      // Anyone can read their own submissions or approved submissions
+      allow read: if isAuthenticated() && (
+        resource.data.authorUid == request.auth.uid ||
+        resource.data.status == 'approved'
+      );
+
+      // Submission creation rule
+      allow create: if (
+        // Allow client submissions with pending status
+        request.resource.data.keys().hasAll([
+          'id', 'title', 'category', 'prepMinutes', 'cookMinutes', 'servings', 'difficulty', 'status'
+        ]) &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.title is string &&
+        request.resource.data.title.size() >= 3 &&
+        request.resource.data.title.size() <= 100 &&
+        request.resource.data.prepMinutes is int &&
+        request.resource.data.prepMinutes >= 1 &&
+        request.resource.data.cookMinutes is int &&
+        request.resource.data.cookMinutes >= 0 &&
+        request.resource.data.servings is int &&
+        request.resource.data.servings >= 1 &&
+        request.resource.data.servings <= 50 &&
+        request.resource.data.difficulty in ['Easy', 'Medium', 'Hard'] &&
+        request.resource.data.category in ['Quick & Easy', 'Healthy Meals', 'Desserts']
+      );
+
+      // Clients cannot approve their own submissions
+      allow update: if isAuthor(resource.data.authorUid) &&
+                       request.resource.data.status == resource.data.status;
+
+      allow delete: if isAuthor(resource.data.authorUid);
+    }
+  }
+}

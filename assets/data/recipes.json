@@ -1,0 +1,464 @@
+[
+  {
+    "id": "classic-pasta",
+    "title": "Creamy Tomato Basil Pasta",
+    "description": "Al dente rigatoni tossed in a velvety slow-simmered San Marzano tomato cream sauce, garnished with fragrant torn sweet basil and freshly grated 24-month Parmigiano-Reggiano.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Pasta", "Italian", "Vegetarian", "Quick", "Comfort Food"],
+    "ingredients": [
+      "250g Rigatoni or Penne pasta",
+      "1 can (400g) San Marzano crushed tomatoes",
+      "3 cloves Garlic, finely minced",
+      "1/2 cup Heavy cream (or coconut cream)",
+      "1/4 cup Fresh Parmigiano-Reggiano, grated",
+      "2 tbsp Extra virgin olive oil",
+      "1/2 cup Fresh basil leaves, roughly torn",
+      "1/2 tsp Crushed red pepper flakes",
+      "Sea salt and freshly cracked black pepper to taste"
+    ],
+    "instructions": [
+      "Bring a large pot of generously salted water to a rolling boil. Cook pasta until al dente, about 9-11 minutes, reserving 1/2 cup of starchy pasta cooking water.",
+      "In a wide skillet, heat extra virgin olive oil over medium heat. Sauté minced garlic and crushed chili flakes for 60 seconds until fragrant without browning.",
+      "Pour in crushed San Marzano tomatoes, season with salt and pepper, and simmer gently for 8 minutes until slightly thickened.",
+      "Stir in heavy cream and half of the grated Parmesan, simmering for 2 minutes into a luscious rose blush sauce.",
+      "Toss cooked pasta and a splash of reserved pasta water into the sauce, coating every piece. Remove from heat, fold in fresh basil, and top with remaining Parmesan."
+    ],
+    "createdAt": "2026-01-15T12:00:00.000Z"
+  },
+  {
+    "id": "vegetable-stir-fry",
+    "title": "Crispy Sesame Vegetable Stir-Fry",
+    "description": "Vibrant garden vegetables flash-seared in a smoking-hot wok with a savory ginger-garlic soy glaze and toasted sesame seeds.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "servings": 3,
+    "difficulty": "Easy",
+    "tags": ["Vegan", "Stir-fry", "Asian", "Crispy", "Healthy"],
+    "ingredients": [
+      "1 head Broccoli, cut into small florets",
+      "1 Red bell pepper, thinly sliced",
+      "1 cup Snap peas, trimmed",
+      "1 medium Carrot, julienned",
+      "2 tbsp Low-sodium tamari or soy sauce",
+      "1 tbsp Pure sesame oil",
+      "1 tbsp Honey or maple syrup",
+      "2 cloves Garlic, grated",
+      "1 tsp Fresh ginger, grated",
+      "1 tbsp Toasted sesame seeds"
+    ],
+    "instructions": [
+      "In a small mixing bowl, whisk together tamari, sesame oil, honey, grated garlic, grated ginger, and 1 tbsp water to create the stir-fry glaze.",
+      "Heat a large wok or heavy skillet over high heat with high smoke-point cooking oil until shimmering hot.",
+      "Add broccoli florets and carrots first; stir vigorously for 3 minutes until tender-crisp.",
+      "Toss in sliced bell pepper and snap peas, stirring continuously for an additional 2 minutes.",
+      "Pour glaze over the vegetables, tossing rapidly until glistening and lightly caramelized. Garnish with toasted sesame seeds and serve immediately."
+    ],
+    "createdAt": "2026-01-16T14:30:00.000Z"
+  },
+  {
+    "id": "chicken-wrap",
+    "title": "Mediterranean Herb Chicken Wrap",
+    "description": "Charred herb-marinated chicken breast wrapped in warm flatbread with crisp Romaine lettuce, diced cucumbers, and house-made garlic tzatziki.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Chicken", "Mediterranean", "High Protein", "Lunch", "Wrap"],
+    "ingredients": [
+      "300g Boneless chicken breast, sliced into cutlets",
+      "2 Large whole wheat or Lebanese flatbreads",
+      "1 cup Crisp Romaine lettuce, shredded",
+      "1 cup Persian cucumber and cherry tomatoes, diced",
+      "3 tbsp Greek yogurt tzatziki sauce",
+      "1 tbsp Olive oil",
+      "1 tsp Dried oregano and smoked paprika",
+      "Juice of 1/2 fresh lemon",
+      "Sea salt and freshly ground pepper"
+    ],
+    "instructions": [
+      "Toss chicken slices with olive oil, lemon juice, dried oregano, smoked paprika, salt, and black pepper.",
+      "Heat a cast-iron grill pan over medium-high heat. Sear chicken for 4-5 minutes per side until golden brown and cooked through (165°F internal temperature).",
+      "Warm flatbreads in a dry skillet for 30 seconds until pliable.",
+      "Spread a generous spoonful of tzatziki across the center of each flatbread.",
+      "Layer shredded Romaine, diced cucumber, tomatoes, and warm sliced chicken. Roll tightly, slice diagonally, and enjoy warm."
+    ],
+    "createdAt": "2026-01-17T11:15:00.000Z"
+  },
+  {
+    "id": "garlic-fried-rice",
+    "title": "Golden Garlic Scallion Fried Rice",
+    "description": "Fragrant jasmine rice wok-tossed with crispy golden garlic chips, farm eggs, scallion oil, and a touch of white pepper.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Rice", "Quick", "Comfort Food", "Egg", "Scallion"],
+    "ingredients": [
+      "3 cups Cooked jasmine rice (preferably day-old and chilled)",
+      "6 cloves Fresh garlic, thinly sliced",
+      "2 large Free-range eggs, beaten",
+      "3 stalks Green scallions, separated into whites and greens",
+      "2 tbsp Cooking oil or ghee",
+      "1 tbsp Light soy sauce",
+      "1/2 tsp Toasted sesame oil",
+      "1/4 tsp Ground white pepper",
+      "Pinch of sea salt"
+    ],
+    "instructions": [
+      "In a dry wok or large skillet, fry sliced garlic in oil over medium-low heat until crisp and light golden. Transfer garlic chips to a paper towel, leaving fragrant garlic oil in the wok.",
+      "Turn heat to medium-high. Add white scallion parts and sauté for 30 seconds. Pour in beaten eggs, softly scrambling them until just set.",
+      "Add chilled jasmine rice, pressing clumps gently with the spatula to separate grains.",
+      "Drizzle soy sauce, sesame oil, and white pepper around the wok perimeter, tossing rice briskly over high heat for 3 minutes.",
+      "Fold in green scallions and top with crispy garlic chips before serving piping hot."
+    ],
+    "createdAt": "2026-01-18T09:00:00.000Z"
+  },
+  {
+    "id": "tomato-omelette",
+    "title": "Rustic Garden Tomato & Herb Omelette",
+    "description": "French-style fluffy eggs folded over blistered sweet cherry tomatoes, soft creamy goat cheese, and fresh chives.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 5,
+    "cookMinutes": 7,
+    "servings": 1,
+    "difficulty": "Easy",
+    "tags": ["Breakfast", "Eggs", "Keto", "Vegetarian", "Quick"],
+    "ingredients": [
+      "3 Fresh pasture-raised eggs",
+      "1/2 cup Sweet cherry tomatoes, halved",
+      "2 tbsp Crumbled goat cheese or feta",
+      "1 tbsp French unsalted butter",
+      "1 tbsp Fresh chives, finely snipped",
+      "1 tbsp Extra virgin olive oil",
+      "Flaky sea salt and fresh black pepper"
+    ],
+    "instructions": [
+      "Heat olive oil in a non-stick skillet over medium-high heat. Add halved cherry tomatoes and blister for 2 minutes until juices begin to release. Set aside.",
+      "In a bowl, vigorously whisk eggs with a pinch of sea salt until uniform and airy.",
+      "Melt butter in the skillet over medium-low heat until foaming. Pour in the eggs and gently swirl, pulling cooked edges toward the center with a spatula.",
+      "While the center remains custard-soft, arrange blistered tomatoes and goat cheese over one half.",
+      "Carefully fold the other half over, slide onto a warm plate, and finish with fresh chives and freshly ground black pepper."
+    ],
+    "createdAt": "2026-01-19T08:30:00.000Z"
+  },
+  {
+    "id": "grilled-chicken-bowl",
+    "title": "Green Goddess Grilled Chicken Bowl",
+    "description": "Marinated citrus herb chicken breast paired with fluffy warm quinoa, roasted sweet potatoes, avocado slices, and creamy green goddess dressing.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": ["Healthy", "High Protein", "Grain Bowl", "Avocado", "Gluten-Free"],
+    "ingredients": [
+      "2 Boneless chicken breasts (350g)",
+      "1 cup Cooked tri-color quinoa",
+      "1 Medium sweet potato, cubed and roasted",
+      "1 Ripe Hass avocado, sliced",
+      "2 cups Fresh baby spinach or rocket",
+      "2 tbsp Extra virgin olive oil",
+      "1 tbsp Apple cider vinegar",
+      "1/4 cup Tahini or Greek yogurt herb dressing",
+      "1 tbsp Toasted pepitas (pumpkin seeds)",
+      "Sea salt and freshly ground pepper"
+    ],
+    "instructions": [
+      "Preheat oven to 400°F (200°C). Toss cubed sweet potatoes with 1 tbsp olive oil, salt, and pepper; roast for 20 minutes until caramelized and tender.",
+      "Season chicken breasts with remaining olive oil, lemon juice, salt, and cracked pepper.",
+      "Grill chicken in a ridged skillet for 6 minutes per side until charred grill marks appear and inside reaches 165°F. Rest 5 minutes, then slice.",
+      "Divide baby spinach and warm quinoa between two wide artisanal bowls.",
+      "Arrange sliced chicken, roasted sweet potatoes, and avocado fans over the grains. Drizzle green goddess dressing and sprinkle crunchy pepitas."
+    ],
+    "createdAt": "2026-01-20T17:00:00.000Z"
+  },
+  {
+    "id": "quinoa-salad",
+    "title": "Zesty Mediterranean Quinoa Crunch Salad",
+    "description": "Fluffy organic quinoa tossed with Persian cucumbers, Kalamata olives, juicy heirloom tomatoes, crumbled feta, and lemon-oregano vinaigrette.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Salad", "Mediterranean", "Quinoa", "Vegetarian", "Meal Prep"],
+    "ingredients": [
+      "1 cup Dry white quinoa, rinsed thoroughly",
+      "2 cups Crisp Persian cucumbers, diced small",
+      "1 cup Cherry tomatoes, quartered",
+      "1/2 cup Kalamata olives, pitted and halved",
+      "1/3 cup Red onion, very finely minced",
+      "1/2 cup Crumbled Greek sheep's milk feta",
+      "1/3 cup Fresh flat-leaf parsley and mint, chopped",
+      "3 tbsp Cold-pressed olive oil",
+      "2 tbsp Fresh lemon juice",
+      "1 clove Garlic, grated",
+      "1/2 tsp Dried Greek oregano"
+    ],
+    "instructions": [
+      "In a saucepan, combine rinsed quinoa with 2 cups of water and 1/2 tsp salt. Bring to a boil, then cover and simmer on low for 15 minutes. Fluff with a fork and cool.",
+      "In a large bowl, whisk olive oil, lemon juice, grated garlic, oregano, salt, and pepper.",
+      "Add diced cucumbers, cherry tomatoes, Kalamata olives, red onion, and chopped fresh herbs to the dressing.",
+      "Fold in cooled fluffy quinoa and gently toss until evenly dressed.",
+      "Crumble feta cheese over top and refrigerate for 20 minutes before serving for maximum flavor melding."
+    ],
+    "createdAt": "2026-01-21T13:45:00.000Z"
+  },
+  {
+    "id": "baked-salmon",
+    "title": "Garlic Herb Butter Sheet Pan Salmon",
+    "description": "Wild-caught salmon fillets roasted to flaky tenderness with tender asparagus spears, lemon wheels, and garlic compound butter.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 10,
+    "cookMinutes": 14,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Seafood", "Keto", "High Omega-3", "Dinner", "Gluten-Free"],
+    "ingredients": [
+      "2 Fresh salmon fillets (180g each, skin-on)",
+      "1 bunch Fresh green asparagus, woody ends snapped",
+      "2 tbsp Melted grass-fed butter or olive oil",
+      "2 cloves Fresh garlic, crushed",
+      "1 Lemon, half sliced into wheels and half juiced",
+      "1 tbsp Fresh dill, chopped",
+      "Sea salt and freshly cracked black pepper"
+    ],
+    "instructions": [
+      "Preheat oven to 400°F (200°C) and line a rimmed baking sheet with unbleached parchment paper.",
+      "Arrange asparagus in an even layer. Place salmon fillets skin-side down in the center.",
+      "Whisk melted butter, crushed garlic, lemon juice, salt, and pepper. Brush generously over salmon fillets and drizzle over asparagus.",
+      "Place thin lemon wheels on top of the salmon fillets.",
+      "Bake for 12-14 minutes until salmon flakes effortlessly with a fork and asparagus is bright green and tender. Sprinkle fresh dill and serve."
+    ],
+    "createdAt": "2026-01-22T19:20:00.000Z"
+  },
+  {
+    "id": "lentil-soup",
+    "title": "Golden Turmeric French Lentil Soup",
+    "description": "Hearty brown lentils slow-cooked with aromatic mirepoix vegetables, ground turmeric, cumin, and tender baby kale.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Soup", "Vegan", "Lentils", "Fiber", "Warm & Cozy"],
+    "ingredients": [
+      "1.5 cups French green or brown lentils, rinsed",
+      "1 Yellow onion, diced",
+      "2 medium Carrots, diced",
+      "2 stalks Celery, diced",
+      "4 cloves Garlic, minced",
+      "4 cups Organic vegetable broth",
+      "1 can (400g) Diced tomatoes",
+      "1 tsp Ground turmeric and ground cumin",
+      "2 cups Baby kale or spinach, roughly chopped",
+      "2 tbsp Extra virgin olive oil",
+      "Juice of 1/2 fresh lemon"
+    ],
+    "instructions": [
+      "Heat olive oil in a large Dutch oven over medium heat. Sauté onion, carrots, and celery for 6 minutes until softened.",
+      "Add minced garlic, ground turmeric, and cumin; cook for 1 minute until intoxicatingly fragrant.",
+      "Add rinsed lentils, diced tomatoes with their juice, and rich vegetable broth. Bring to a boil.",
+      "Reduce heat to low, cover with lid, and simmer gently for 25-30 minutes until lentils are tender yet hold their shape.",
+      "Stir in chopped baby kale and simmer 2 minutes until wilted. Finish with fresh lemon juice and season to taste."
+    ],
+    "createdAt": "2026-01-23T11:00:00.000Z"
+  },
+  {
+    "id": "avocado-toast",
+    "title": "Artisanal Sourdough Avocado Tartine",
+    "description": "Toasted sourdough brushed with garlic, topped with chunky smashed Haas avocado, soft poached egg, radishes, microgreens, and chili crisps.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 8,
+    "cookMinutes": 4,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Breakfast", "Avocado", "Sourdough", "Quick", "Brunch"],
+    "ingredients": [
+      "2 Thick slices artisan sourdough boule",
+      "2 Ripe Hass avocados",
+      "2 Fresh eggs (poached or soft boiled)",
+      "1 Watermelon radish, sliced paper-thin",
+      "1/2 cup Microgreens or pea shoots",
+      "1 tbsp Extra virgin olive oil",
+      "1 tbsp Fresh lemon juice",
+      "1/2 tsp Everything bagel seasoning or chili flakes",
+      "Maldon flaky sea salt"
+    ],
+    "instructions": [
+      "Toast thick sourdough slices until deeply golden brown and crunchy on the crust.",
+      "In a bowl, coarsely mash avocados with fresh lemon juice, sea salt, and a splash of olive oil, keeping pleasant chunky texture.",
+      "Poach eggs in simmering water with a drop of vinegar for 3 minutes until whites are firm and yolks remain molten.",
+      "Generously spread avocado mash over hot toast. Layer delicate radish ribbons and place a warm poached egg on each slice.",
+      "Garnish with microgreens, chili flakes, and a sprinkle of crunchy Maldon sea salt."
+    ],
+    "createdAt": "2026-01-24T09:15:00.000Z"
+  },
+  {
+    "id": "chocolate-brownies",
+    "title": "Fudgy Double Dark Chocolate Brownies",
+    "description": "Ultra-rich Belgian chocolate brownies with a paper-thin shiny crinkly top, gooey molten center, and crunchy cacao nibs.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "servings": 9,
+    "difficulty": "Medium",
+    "tags": ["Baking", "Chocolate", "Indulgent", "Dessert", "Fudgy"],
+    "ingredients": [
+      "200g 70% Dark bittersweet chocolate, chopped",
+      "150g Unsalted European butter",
+      "3 Large eggs at room temperature",
+      "1 cup Granulated sugar and 1/2 cup brown sugar",
+      "3/4 cup All-purpose flour",
+      "1/3 cup Dutch-process cocoa powder",
+      "1 tsp Pure Madagascar vanilla extract",
+      "1/2 tsp Sea salt flakes"
+    ],
+    "instructions": [
+      "Preheat oven to 350°F (175°C). Butter an 8-inch square metal baking pan and line with crisscrossed parchment paper.",
+      "Melt dark chocolate and butter together in a heatproof bowl set over simmering water; cool slightly.",
+      "In a stand mixer or with a hand whisk, beat eggs and both sugars on high speed for 5 minutes until thick, pale, and ribbon-like (key to the crinkly crust!).",
+      "Pour melted chocolate mixture and vanilla into eggs, folding gently with a silicone spatula.",
+      "Sift flour, cocoa powder, and salt over batter. Fold just until no dry streaks remain. Pour into pan and bake for 22-25 minutes. Cool completely before slicing."
+    ],
+    "createdAt": "2026-01-25T16:00:00.000Z"
+  },
+  {
+    "id": "strawberry-cheesecake",
+    "title": "Velvety Strawberry Swirl Cheesecake",
+    "description": "Creamy New York style vanilla cheesecake on a buttery Graham cracker crust, swirled with tart homemade wild strawberry coulis.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "servings": 8,
+    "difficulty": "Hard",
+    "tags": ["Cheesecake", "Strawberry", "Baking", "Dessert", "Celebration"],
+    "ingredients": [
+      "500g Philadelphia cream cheese, softened",
+      "1.5 cups Graham cracker crumbs",
+      "4 tbsp Unsalted butter, melted",
+      "3/4 cup Pure cane sugar",
+      "2 Large eggs + 1 yolk",
+      "1/2 cup Sour cream",
+      "1 tbsp Pure vanilla extract",
+      "1 cup Fresh ripe strawberries, pureed and strained with 2 tbsp sugar"
+    ],
+    "instructions": [
+      "Preheat oven to 325°F (160°C). Mix Graham cracker crumbs with melted butter; press firmly into bottom of a 7-inch springform pan. Bake 10 minutes, then cool.",
+      "In a large bowl, beat softened cream cheese and sugar on low speed until smooth without aerating.",
+      "Add sour cream and vanilla extract. Incorporate eggs one at a time on low speed until combined.",
+      "Pour cheesecake batter over crust. Dollop strawberry puree across the surface and draw gentle figure-8 swirls with a wooden skewer.",
+      "Bake in a water bath for 50-55 minutes until edges are set and center gently jiggles. Turn off oven, crack door open for 1 hour, then chill overnight."
+    ],
+    "createdAt": "2026-01-26T14:00:00.000Z"
+  },
+  {
+    "id": "banana-pancakes",
+    "title": "Fluffy Soufflé Banana Oatmeal Pancakes",
+    "description": "Golden-brown stacked pancakes naturally sweetened with caramelized ripe bananas, rolled oats, cinnamon, and pure Canadian maple syrup.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Pancakes", "Banana", "Breakfast", "Dessert", "Sweet"],
+    "ingredients": [
+      "2 Very ripe bananas, peeled and mashed",
+      "2 Free-range eggs",
+      "1 cup Old-fashioned rolled oats (blended into flour)",
+      "1 tsp Baking powder",
+      "1/2 tsp Ground cinnamon",
+      "1/4 cup Almond milk or oat milk",
+      "1 tbsp Coconut oil or butter for skillet",
+      "Pure maple syrup and fresh banana coins for topping"
+    ],
+    "instructions": [
+      "In a blender, combine mashed bananas, eggs, oat flour, baking powder, cinnamon, and milk. Blend for 30 seconds until a smooth, pourable batter forms.",
+      "Let the batter rest for 5 minutes so the oat flour absorbs moisture and puffs.",
+      "Heat a cast-iron skillet over medium-low heat and brush lightly with butter or coconut oil.",
+      "Pour 1/4 cup batter per pancake. Cook for 2.5 minutes until surface bubbles form and edges look matte.",
+      "Carefully flip and cook for 1-2 minutes more until golden brown and cooked through. Stack high with butter, banana slices, and warm maple syrup."
+    ],
+    "createdAt": "2026-01-27T08:00:00.000Z"
+  },
+  {
+    "id": "mango-pudding",
+    "title": "Silky Tropical Alphonso Mango Pudding",
+    "description": "Refreshing and creamy chilled mango pudding infused with fragrant coconut milk, sweet Alphonso puree, and juicy fresh mango cubes.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1546069901-d70311c1e5f8?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Mango", "Chilled", "No-Bake", "Summer", "Gluten-Free"],
+    "ingredients": [
+      "2 cups Sweet ripe Alphonso mango pulp",
+      "1 cup Coconut cream or whole milk",
+      "1/3 cup Condensed milk or raw sugar",
+      "2 tsp Unflavored gelatin powder (or agar agar)",
+      "1/4 cup Lukewarm water",
+      "1 Fresh ripe mango, diced into jewels for garnish",
+      "Fresh mint sprigs for presentation"
+    ],
+    "instructions": [
+      "Sprinkle gelatin powder over lukewarm water in a small ramekin; let bloom for 5 minutes.",
+      "In a small saucepan, gently warm coconut cream and condensed milk over low heat. Add bloomed gelatin, whisking until completely dissolved (do not boil).",
+      "Remove saucepan from heat and stir in the chilled mango puree until silky smooth and radiant orange.",
+      "Pour into glass dessert cups or ramekins. Refrigerate for at least 3-4 hours until softly set.",
+      "Garnish each glass with freshly diced sweet mango cubes and a vibrant sprig of fresh mint before serving cool."
+    ],
+    "createdAt": "2026-01-27T10:30:00.000Z"
+  },
+  {
+    "id": "apple-crumble",
+    "title": "Warm Cinnamon Honeycrisp Apple Crumble",
+    "description": "Tender spiced Honeycrisp apple slices baked with pure maple syrup, covered with a golden buttery oat and pecan crumble, served à la mode.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "servings": 6,
+    "difficulty": "Medium",
+    "tags": ["Apples", "Baking", "Comfort Food", "Autumn", "Warm"],
+    "ingredients": [
+      "5 Honeycrisp or Granny Smith apples, peeled, cored, and sliced",
+      "1 tbsp Fresh lemon juice",
+      "1 tsp Ground Ceylon cinnamon and 1/4 tsp nutmeg",
+      "2 tbsp Pure maple syrup or brown sugar",
+      "1 cup Rolled oats",
+      "1/2 cup Almond flour or all-purpose flour",
+      "1/3 cup Raw pecans, roughly chopped",
+      "1/3 cup Cold unsalted butter, cubed into pea-sized bits",
+      "1 tub Artisanal Madagascar vanilla bean ice cream"
+    ],
+    "instructions": [
+      "Preheat oven to 375°F (190°C). Butter a 9-inch ceramic baking dish.",
+      "Toss sliced apples with lemon juice, 1/2 tsp cinnamon, nutmeg, and maple syrup. Spread evenly in the baking dish.",
+      "In a bowl, combine oats, flour, pecans, remaining cinnamon, and pinch of salt. Rub cubed cold butter into dry ingredients with fingertips until coarse sandy clusters form.",
+      "Scatter crumble generously over apples.",
+      "Bake for 30-35 minutes until fruit is bubbly and topping is deeply golden and fragrant. Serve warm with a generous scoop of vanilla bean ice cream."
+    ],
+    "createdAt": "2026-01-27T12:00:00.000Z"
+  }
+]
