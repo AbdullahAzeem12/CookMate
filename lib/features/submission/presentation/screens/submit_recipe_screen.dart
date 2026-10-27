@@ -281,8 +281,9 @@ class _SubmitRecipeScreenState extends ConsumerState<SubmitRecipeScreen> {
                               );
                             }).toList(),
                             onChanged: (val) {
-                              if (val != null)
+                              if (val != null) {
                                 setState(() => _selectedCategory = val);
+                              }
                             },
                           ),
                         ],
@@ -304,8 +305,9 @@ class _SubmitRecipeScreenState extends ConsumerState<SubmitRecipeScreen> {
                               );
                             }).toList(),
                             onChanged: (val) {
-                              if (val != null)
+                              if (val != null) {
                                 setState(() => _selectedDifficulty = val);
+                              }
                             },
                           ),
                         ],

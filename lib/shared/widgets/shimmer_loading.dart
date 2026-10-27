@@ -82,44 +82,52 @@ class RecipeCardSkeleton extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(22),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AspectRatio(
-              aspectRatio: 1.3,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(22)),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final hasBoundedHeight = constraints.hasBoundedHeight;
+            final imageBox = Container(
+              decoration: const BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(22)),
+              ),
+            );
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (hasBoundedHeight)
+                  Expanded(child: imageBox)
+                else
+                  AspectRatio(aspectRatio: 1.35, child: imageBox),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Container(
+                        height: 12,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 16,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Container(
-                    height: 12,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+              ],
+            );
+          },
         ),
       ),
     );

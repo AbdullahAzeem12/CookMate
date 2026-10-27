@@ -193,7 +193,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           maxCrossAxisExtent: 280,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
-                          childAspectRatio: 0.76,
+                          childAspectRatio: 0.70,
                         ),
                     itemCount: recipes.length,
                     itemBuilder: (context, index) {
@@ -207,7 +207,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                     maxCrossAxisExtent: 280,
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 0.76,
+                    childAspectRatio: 0.70,
                   ),
                   itemCount: 4,
                   itemBuilder: (_, __) => const RecipeCardSkeleton(),

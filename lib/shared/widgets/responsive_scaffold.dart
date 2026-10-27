@@ -175,21 +175,24 @@ class ResponsiveScaffold extends ConsumerWidget {
               ),
             ],
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(
-                  context,
-                  index: 0,
-                  icon: Icons.home_outlined,
-                  activeIcon: Icons.home_rounded,
-                  label: 'Home',
+                Expanded(
+                  child: _buildNavItem(
+                    context,
+                    index: 0,
+                    icon: Icons.home_outlined,
+                    activeIcon: Icons.home_rounded,
+                    label: 'Home',
+                  ),
                 ),
-                _buildNavItem(
-                  context,
-                  index: 1,
-                  icon: Icons.explore_outlined,
-                  activeIcon: Icons.explore_rounded,
-                  label: 'Explore',
+                Expanded(
+                  child: _buildNavItem(
+                    context,
+                    index: 1,
+                    icon: Icons.explore_outlined,
+                    activeIcon: Icons.explore_rounded,
+                    label: 'Explore',
+                  ),
                 ),
                 // Center Submit Button
                 Semantics(
@@ -201,7 +204,8 @@ class ResponsiveScaffold extends ConsumerWidget {
                       onTap: () => context.push('/submit'),
                       borderRadius: BorderRadius.circular(24),
                       child: Container(
-                        padding: const EdgeInsets.all(12),
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           gradient: AppColors.primaryGradient,
                           shape: BoxShape.circle,
@@ -218,25 +222,29 @@ class ResponsiveScaffold extends ConsumerWidget {
                         child: const Icon(
                           Icons.add_rounded,
                           color: AppColors.citrusLime,
-                          size: 24,
+                          size: 22,
                         ),
                       ),
                     ),
                   ),
                 ),
-                _buildNavItem(
-                  context,
-                  index: 2,
-                  icon: Icons.search_outlined,
-                  activeIcon: Icons.search_rounded,
-                  label: 'Search',
+                Expanded(
+                  child: _buildNavItem(
+                    context,
+                    index: 2,
+                    icon: Icons.search_outlined,
+                    activeIcon: Icons.search_rounded,
+                    label: 'Search',
+                  ),
                 ),
-                _buildNavItem(
-                  context,
-                  index: 3,
-                  icon: Icons.bookmark_outline_rounded,
-                  activeIcon: Icons.bookmark_rounded,
-                  label: 'Saved',
+                Expanded(
+                  child: _buildNavItem(
+                    context,
+                    index: 3,
+                    icon: Icons.bookmark_outline_rounded,
+                    activeIcon: Icons.bookmark_rounded,
+                    label: 'Saved',
+                  ),
                 ),
               ],
             ),
@@ -266,9 +274,9 @@ class ResponsiveScaffold extends ConsumerWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () => _onDestinationSelected(context, index),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(16),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            padding: const EdgeInsets.symmetric(vertical: 4),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -280,14 +288,16 @@ class ResponsiveScaffold extends ConsumerWidget {
                     color: isSelected
                         ? activeColor
                         : theme.textTheme.bodySmall?.color,
-                    size: 24,
+                    size: 22,
                   ),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: 10.5,
                     fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                     color: isSelected
                         ? activeColor

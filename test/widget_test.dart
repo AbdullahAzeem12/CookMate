@@ -2,6 +2,9 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:cook_mate/app/app.dart';
+import 'package:cook_mate/app/router.dart';
+import 'package:cook_mate/features/recipes/domain/models/recipe.dart';
+import 'package:cook_mate/shared/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -201,14 +204,65 @@ void main() {
   setUp(() {
     HttpOverrides.global = _TestHttpOverrides();
     SharedPreferences.setMockInitialValues({});
+    appRouter.go('/');
   });
+
+  tearDown(() {
+    appRouter.go('/');
+  });
+
+  testWidgets(
+    'RecipeCard does not overflow under compact device dimensions (150w x 198h)',
+    (WidgetTester tester) async {
+      const sampleRecipe = Recipe(
+        id: 'test-recipe-1',
+        title: 'Rustic Garden Tomato & Herb Frittata Special',
+        description: 'A delicious test frittata description that is long.',
+        category: 'Quick & Easy',
+        difficulty: 'Easy',
+        prepMinutes: 10,
+        cookMinutes: 15,
+        servings: 2,
+        imageUrl: '',
+        ingredients: ['2 eggs', '1 tomato'],
+        instructions: ['Whisk eggs', 'Cook in pan'],
+        tags: ['Breakfast', 'Eggs'],
+      );
+
+      await tester.pumpWidget(
+        const ProviderScope(
+          child: MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: SizedBox(
+                  width: 150.0,
+                  height: 198.0,
+                  child: RecipeCard(recipe: sampleRecipe),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+
+      await tester.pumpAndSettle();
+
+      // Verify no assertion or overflow exceptions were thrown during layout
+      expect(tester.takeException(), isNull);
+      expect(find.textContaining('Rustic Garden'), findsOneWidget);
+      expect(find.text('25 min'), findsOneWidget);
+    },
+  );
 
   testWidgets(
     'CookMate App boots up and renders main navigation and home content',
     (WidgetTester tester) async {
       tester.view.physicalSize = const Size(1080, 2200);
       tester.view.devicePixelRatio = 2.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
       await tester.pumpWidget(const ProviderScope(child: CookMateApp()));
 
@@ -226,18 +280,43 @@ void main() {
       await tester.tap(find.byIcon(Icons.explore_outlined));
       await tester.pumpAndSettle();
 
-      // Verify Explore screen rendered
+      // Verify Explore screen rendered without exceptions
+      expect(tester.takeException(), isNull);
       expect(find.text('Explore Recipes'), findsOneWidget);
 
       // Tap on 'Search' navigation branch
       await tester.tap(find.byIcon(Icons.search_outlined));
       await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
       expect(find.text('Find a Dish'), findsOneWidget);
 
       // Tap on 'Saved' navigation branch
       await tester.tap(find.byIcon(Icons.bookmark_outline_rounded));
       await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
       expect(find.text('Saved Recipes'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'Explore Screen grid on compact mobile viewport (360x780) renders without pixel overflow',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(720, 1560); // 360 x 780 logical dp (e.g. Huawei MED LX9)
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
+      appRouter.go('/recipes');
+      await tester.pumpWidget(const ProviderScope(child: CookMateApp()));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Verify no exceptions or overflow
+      expect(tester.takeException(), isNull);
+      expect(find.text('Explore Recipes'), findsOneWidget);
     },
   );
 }

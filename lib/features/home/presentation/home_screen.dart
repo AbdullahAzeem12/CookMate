@@ -285,7 +285,7 @@ class HomeScreen extends ConsumerWidget {
               // Trending Recipes Horizontal Slider
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 250,
+                  height: 260,
                   child: allRecipesAsync.when(
                     data: (recipes) {
                       final trending = recipes.skip(1).take(5).toList();
@@ -342,7 +342,7 @@ class HomeScreen extends ConsumerWidget {
                             maxCrossAxisExtent: 280,
                             mainAxisSpacing: 16,
                             crossAxisSpacing: 16,
-                            childAspectRatio: 0.76,
+                            childAspectRatio: 0.70,
                           ),
                       delegate: SliverChildBuilderDelegate(
                         (context, index) =>
@@ -360,7 +360,7 @@ class HomeScreen extends ConsumerWidget {
                           maxCrossAxisExtent: 280,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
-                          childAspectRatio: 0.76,
+                          childAspectRatio: 0.70,
                         ),
                     delegate: SliverChildBuilderDelegate(
                       (context, index) => const RecipeCardSkeleton(),

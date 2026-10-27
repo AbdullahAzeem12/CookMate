@@ -140,7 +140,7 @@ class FavoritesScreen extends ConsumerWidget {
                           maxCrossAxisExtent: 280,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
-                          childAspectRatio: 0.76,
+                          childAspectRatio: 0.70,
                         ),
                     delegate: SliverChildBuilderDelegate(
                       (context, index) => RecipeCard(recipe: recipes[index]),
@@ -157,7 +157,7 @@ class FavoritesScreen extends ConsumerWidget {
               maxCrossAxisExtent: 280,
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
-              childAspectRatio: 0.76,
+              childAspectRatio: 0.70,
             ),
             itemCount: 4,
             itemBuilder: (_, __) => const RecipeCardSkeleton(),

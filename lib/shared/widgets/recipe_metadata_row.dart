@@ -37,24 +37,24 @@ class RecipeMetadataRow extends StatelessWidget {
         children: [
           Icon(
             Icons.schedule_rounded,
-            size: 14,
+            size: 13,
             color: isDarkText ? AppColors.forestGreen : AppColors.citrusLime,
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: 3),
           Text('$totalMinutes min', style: style),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 4),
             child: Text('•', style: style),
           ),
           Icon(
             Icons.people_alt_outlined,
-            size: 14,
+            size: 13,
             color: isDarkText ? AppColors.forestGreen : AppColors.citrusLime,
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: 3),
           Text('$servings srv', style: style),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 4),
             child: Text('•', style: style),
           ),
           Container(

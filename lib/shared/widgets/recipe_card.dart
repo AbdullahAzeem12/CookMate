@@ -59,42 +59,50 @@ class RecipeCard extends StatelessWidget {
                 ),
               ],
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Top Image with Hero & Favorite button
-                Stack(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final hasBoundedHeight = constraints.hasBoundedHeight;
+
+                final imageWidget = Stack(
+                  fit: hasBoundedHeight ? StackFit.expand : StackFit.loose,
                   children: [
                     ClipRRect(
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(22),
                       ),
-                      child: AspectRatio(
-                        aspectRatio: 1.3,
-                        child: Hero(
-                          tag: 'recipe-image-${recipe.id}',
-                          child: _buildNetworkImage(recipe.imageUrl),
-                        ),
-                      ),
+                      child: hasBoundedHeight
+                          ? SizedBox.expand(
+                              child: Hero(
+                                tag: 'recipe-image-${recipe.id}',
+                                child: _buildNetworkImage(recipe.imageUrl),
+                              ),
+                            )
+                          : AspectRatio(
+                              aspectRatio: 1.35,
+                              child: Hero(
+                                tag: 'recipe-image-${recipe.id}',
+                                child: _buildNetworkImage(recipe.imageUrl),
+                              ),
+                            ),
                     ),
                     // Category chip overlay
                     Positioned(
-                      top: 10,
-                      left: 10,
+                      top: 8,
+                      left: 8,
                       child: GlassSurface(
-                        borderRadius: 20,
+                        borderRadius: 16,
                         blur: 10,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 4,
+                          horizontal: 8,
+                          vertical: 3,
                         ),
-                        backgroundColor: Colors.black.withValues(alpha: 0.35),
+                        backgroundColor: Colors.black.withValues(alpha: 0.4),
                         borderColor: Colors.white.withValues(alpha: 0.2),
                         child: Text(
                           recipe.category,
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 11,
+                            fontSize: 10,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -102,28 +110,29 @@ class RecipeCard extends StatelessWidget {
                     ),
                     // Favorite button
                     Positioned(
-                      top: 8,
-                      right: 8,
-                      child: FavoriteButton(recipeId: recipe.id, size: 20),
+                      top: 6,
+                      right: 6,
+                      child: FavoriteButton(recipeId: recipe.id, size: 18),
                     ),
                   ],
-                ),
-                // Card details
-                Padding(
-                  padding: const EdgeInsets.all(12),
+                );
+
+                final detailsWidget = Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         recipe.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.titleMedium?.copyWith(
+                        style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w700,
-                          height: 1.25,
+                          height: 1.2,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 5),
                       RecipeMetadataRow(
                         totalMinutes: recipe.totalMinutes,
                         servings: recipe.servings,
@@ -132,8 +141,19 @@ class RecipeCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-              ],
+                );
+
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (hasBoundedHeight)
+                      Expanded(child: imageWidget)
+                    else
+                      imageWidget,
+                    detailsWidget,
+                  ],
+                );
+              },
             ),
           ),
         ),
@@ -286,6 +306,8 @@ class RecipeCard extends StatelessWidget {
     return Image.network(
       url,
       fit: BoxFit.cover,
+      width: double.infinity,
+      height: double.infinity,
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
         return Container(

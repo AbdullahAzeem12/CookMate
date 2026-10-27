@@ -173,7 +173,7 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                           maxCrossAxisExtent: 280,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
-                          childAspectRatio: 0.76,
+                          childAspectRatio: 0.70,
                         ),
                     itemCount: filtered.length,
                     itemBuilder: (context, index) {
@@ -187,7 +187,7 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                     maxCrossAxisExtent: 280,
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 0.76,
+                    childAspectRatio: 0.70,
                   ),
                   itemCount: 6,
                   itemBuilder: (_, __) => const RecipeCardSkeleton(),
