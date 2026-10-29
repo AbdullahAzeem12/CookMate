@@ -7,6 +7,8 @@ class RecipeMetadataRow extends StatelessWidget {
   final int servings;
   final String difficulty;
   final bool isDarkText;
+  final int? prepMinutes;
+  final int? cookMinutes;
 
   const RecipeMetadataRow({
     super.key,
@@ -14,6 +16,8 @@ class RecipeMetadataRow extends StatelessWidget {
     required this.servings,
     required this.difficulty,
     this.isDarkText = false,
+    this.prepMinutes,
+    this.cookMinutes,
   });
 
   @override
@@ -35,13 +39,23 @@ class RecipeMetadataRow extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.schedule_rounded,
-            size: 13,
-            color: isDarkText ? AppColors.forestGreen : AppColors.citrusLime,
+          Tooltip(
+            message: prepMinutes != null && cookMinutes != null
+                ? 'Prep: ${prepMinutes}m • Cook: ${cookMinutes}m (Total $totalMinutes min)'
+                : 'Total cooking & prep: $totalMinutes min',
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.schedule_rounded,
+                  size: 13,
+                  color: isDarkText ? AppColors.forestGreen : AppColors.citrusLime,
+                ),
+                const SizedBox(width: 3),
+                Text('$totalMinutes min', style: style),
+              ],
+            ),
           ),
-          const SizedBox(width: 3),
-          Text('$totalMinutes min', style: style),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: Text('•', style: style),

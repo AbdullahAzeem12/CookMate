@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -76,18 +77,34 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
     final filterState = ref.watch(searchFilterProvider);
     final searchResultsAsync = ref.watch(searchResultsProvider);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Find a Dish',
-          style: theme.textTheme.headlineSmall?.copyWith(
-            fontWeight: FontWeight.w800,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go('/');
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_rounded),
+            onPressed: () =>
+                context.canPop() ? context.pop() : context.go('/'),
+          ),
+          title: Text(
+            'Find a Dish',
+            style: theme.textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
-      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -96,17 +113,11 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
             // Search Input Bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              child: Hero(
-                tag: 'main-search-bar',
-                child: Material(
-                  color: Colors.transparent,
-                  child: GlassSearchBar(
-                    controller: _searchController,
-                    onChanged: _onQueryChanged,
-                    hintText: 'Search title, garlic, pasta, vegan...',
-                    showFilterButton: false,
-                  ),
-                ),
+              child: GlassSearchBar(
+                controller: _searchController,
+                onChanged: _onQueryChanged,
+                hintText: 'Search title, garlic, pasta, vegan...',
+                showFilterButton: false,
               ),
             ),
 
@@ -150,18 +161,128 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               ),
             ),
 
-            // Search Results Heading
+            // Search Results Heading & Interactive Sort Selector
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
-              child: searchResultsAsync.when(
-                data: (results) => Text(
-                  '${results.length} recipes matched',
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: searchResultsAsync.when(
+                      data: (results) => Text(
+                        '${results.length} recipes matched',
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      loading: () => const Text('Searching culinary archive...'),
+                      error: (_, __) => const SizedBox.shrink(),
+                    ),
                   ),
-                ),
-                loading: () => const Text('Searching culinary archive...'),
-                error: (_, __) => const SizedBox.shrink(),
+                  PopupMenuButton<String>(
+                    tooltip: 'Sort search results',
+                    initialValue: filterState.sortBy,
+                    onSelected: (val) {
+                      ref
+                          .read(searchFilterProvider.notifier)
+                          .update((s) => s.copyWith(sortBy: val));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF162D25) : Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.12)
+                              : Colors.black.withValues(alpha: 0.08),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.swap_vert_rounded,
+                            size: 16,
+                            color: isDark
+                                ? AppColors.citrusLime
+                                : AppColors.forestGreen,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            filterState.sortBy == 'relevance'
+                                ? 'Best Match'
+                                : filterState.sortBy == 'quickest'
+                                ? 'Quickest'
+                                : filterState.sortBy == 'prep'
+                                ? 'Prep Time'
+                                : 'Name (A-Z)',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: isDark
+                                  ? AppColors.citrusLime
+                                  : AppColors.forestGreen,
+                            ),
+                          ),
+                          const SizedBox(width: 2),
+                          Icon(
+                            Icons.arrow_drop_down_rounded,
+                            size: 16,
+                            color: isDark
+                                ? AppColors.citrusLime
+                                : AppColors.forestGreen,
+                          ),
+                        ],
+                      ),
+                    ),
+                    itemBuilder: (context) => const [
+                      PopupMenuItem(
+                        value: 'relevance',
+                        child: Row(
+                          children: [
+                            Icon(Icons.auto_awesome_rounded, size: 18),
+                            SizedBox(width: 8),
+                            Text('Best Match (Relevance)'),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 'quickest',
+                        child: Row(
+                          children: [
+                            Icon(Icons.bolt_rounded, size: 18),
+                            SizedBox(width: 8),
+                            Text('Shortest Cook Time'),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 'prep',
+                        child: Row(
+                          children: [
+                            Icon(Icons.timer_outlined, size: 18),
+                            SizedBox(width: 8),
+                            Text('Prep Time'),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 'title',
+                        child: Row(
+                          children: [
+                            Icon(Icons.sort_by_alpha_rounded, size: 18),
+                            SizedBox(width: 8),
+                            Text('Name (A-Z)'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
 
@@ -177,6 +298,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           ? 'We couldn\'t find any dish matching "${_searchController.text}".'
                           : 'Try searching for an ingredient, dish, or category.',
                       actionLabel: 'Clear Search',
+                      showLogo: true,
                       onAction: () {
                         _searchController.clear();
                         _onQueryChanged('');
@@ -197,7 +319,10 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                         ),
                     itemCount: recipes.length,
                     itemBuilder: (context, index) {
-                      return RecipeCard(recipe: recipes[index]);
+                      return RecipeCard(
+                        recipe: recipes[index],
+                        heroTagPrefix: 'search',
+                      );
                     },
                   );
                 },
@@ -218,7 +343,8 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildTimeFilterChip(String label, int? minutes) {

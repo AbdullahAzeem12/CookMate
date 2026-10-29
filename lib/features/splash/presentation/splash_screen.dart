@@ -41,10 +41,10 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    // 7-second master countdown and progress controller
+    // 10-second master countdown and progress controller
     _progressController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 7),
+      duration: const Duration(seconds: 10),
     );
 
     // Continuous floating and specular shine sweep animation
@@ -452,7 +452,7 @@ class _SplashScreenState extends State<SplashScreen>
 
                     const SizedBox(height: 44),
 
-                    // Progress Bar Section (7-Second Continuous Loading)
+                    // Progress Bar Section (10-Second Continuous Loading)
                     AnimatedBuilder(
                       animation: _progressController,
                       builder: (context, _) {
@@ -721,7 +721,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Base Clean Transparent 3D Logo Asset (no square boxes)
+                    // Base Clean Transparent 3D Logo Asset
                     Image.asset(
                       'assets/images/app_logo.png',
                       width: logoSize,
@@ -733,34 +733,53 @@ class _SplashScreenState extends State<SplashScreen>
                       },
                     ),
 
-                    // Brilliant Specular Diagonal Shine Beam Sweep
-                    ShaderMask(
-                      blendMode: BlendMode.screen,
-                      shaderCallback: (bounds) {
-                        final shinePos =
-                            (_floatAndShineController.value * 2.8) - 0.9;
-                        return LinearGradient(
-                          begin: Alignment(-2.2 + shinePos * 2.6, -1.2),
-                          end: Alignment(-0.2 + shinePos * 2.6, 1.2),
-                          colors: [
-                            Colors.transparent,
-                            Colors.white.withValues(alpha: 0.0),
-                            AppColors.citrusLime.withValues(alpha: 0.30),
-                            Colors.white.withValues(alpha: 0.90),
-                            AppColors.citrusLime.withValues(alpha: 0.30),
-                            Colors.white.withValues(alpha: 0.0),
-                            Colors.transparent,
-                          ],
-                          stops: const [0.0, 0.34, 0.45, 0.50, 0.55, 0.66, 1.0],
-                        ).createShader(bounds);
-                      },
-                      child: Image.asset(
-                        'assets/images/app_logo.png',
-                        width: logoSize,
-                        height: logoSize,
-                        fit: BoxFit.contain,
-                        color: Colors.white,
-                        colorBlendMode: BlendMode.srcIn,
+                    // Specular Shine Sheen Sweep ONLY on the Logo Badge (strictly non-overlapping)
+                    Positioned(
+                      left: logoSize * 0.142,
+                      top: logoSize * 0.138,
+                      width: logoSize * 0.716,
+                      height: logoSize * 0.734,
+                      child: IgnorePointer(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            logoSize * 0.716 * 0.22,
+                          ),
+                          child: AnimatedBuilder(
+                            animation: _floatAndShineController,
+                            builder: (context, _) {
+                              final sweepVal = _floatAndShineController.value;
+                              final shineX = (sweepVal * 3.8) - 1.4;
+                              return Container(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment(shineX - 0.7, -1.0),
+                                    end: Alignment(shineX + 0.7, 1.0),
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.white.withValues(alpha: 0.0),
+                                      Colors.white.withValues(alpha: 0.12),
+                                      AppColors.citrusLime.withValues(
+                                        alpha: 0.28,
+                                      ),
+                                      Colors.white.withValues(alpha: 0.38),
+                                      Colors.white.withValues(alpha: 0.08),
+                                      Colors.transparent,
+                                    ],
+                                    stops: const [
+                                      0.0,
+                                      0.35,
+                                      0.46,
+                                      0.50,
+                                      0.54,
+                                      0.65,
+                                      1.0,
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
                     ),
 

@@ -1,214 +1,241 @@
-# 🍲 CookMate — Your Personal Kitchen Companion
+<p align="center">
+  <img src="assets/images/app_logo.png" width="130" height="130" alt="CookMate Logo" />
+</p>
 
-[![Flutter Version](https://img.shields.io/badge/Flutter-3.47.2-02569B?logo=flutter)](https://flutter.dev)
-[![Dart Version](https://img.shields.io/badge/Dart-3.13.2-0175C2?logo=dart)](https://dart.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/badge/Tests-13%20Passed-success)](test/)
+<h1 align="center">🍲 CookMate — Your Master Kitchen Companion</h1>
 
-> **Phase 1 Demo Assignment**: Flutter Foundations, UI Mastery, Navigation & Flutter Architecture.  
-> An offline-first, cross-platform culinary discovery and cooking companion app built with **Material Design 3**, **Liquid Glassmorphism**, **GoRouter deep linking**, **Stateful Shell navigation**, **Riverpod state management**, and **Firebase Firestore submission readiness**.
+<p align="center">
+  <strong>A Luxury Editorial Offline-First Culinary Discovery & Cooking Companion Application</strong>
+</p>
 
----
-
-## 📱 Visual Showcase & Aesthetic Direction
-
-CookMate is styled as a luxury editorial digital cookbook inspired by modern food publications and high-end culinary apps:
-* **Liquid Glassmorphism**: Frosted glass surfaces with clipped `BackdropFilter` gaussian blur, fine specular borders, subtle ambient shadows, and luminous buttons.
-* **Warm Gourmet Color Palette**:
-  * 🌲 **Forest Green** (`#173D31`) — Primary Brand
-  * 🌾 **Warm Cream** (`#F8F4EA`) — Organic Editorial Surface
-  * 🍋 **Citrus Lime** (`#D8F078`) — High-energy Accent
-  * 🍉 **Soft Coral** (`#F18C72`) — Interactive Highlights & Heart Actions
-  * 🌿 **Secondary Sage** (`#A8C4AD`) — Subtle Indicators
-  * 🌑 **Deep Surface** (`#12251F`) — Dark Mode Background
-* **Seamless Dark Mode**: Full Material Design 3 light & dark theme switching with a single tap.
-* **Shared-Element Hero Transitions**: Fluid image enlargement and morphing from cards to detail screens (`recipe-image-{id}`).
+<p align="center">
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter" alt="Flutter" /></a>
+  <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart" alt="Dart" /></a>
+  <a href="https://pub.dev/packages/flutter_riverpod"><img src="https://img.shields.io/badge/Riverpod-2.6.1-2575fc?style=for-the-badge" alt="Riverpod" /></a>
+  <a href="https://pub.dev/packages/go_router"><img src="https://img.shields.io/badge/GoRouter-14.8.1-green?style=for-the-badge" alt="GoRouter" /></a>
+  <img src="https://img.shields.io/badge/Tests-61%20Passed-success?style=for-the-badge&logo=checkmarx" alt="Tests" />
+  <img src="https://img.shields.io/badge/Analyzer-0%20Issues-brightgreen?style=for-the-badge" alt="Analyzer" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License" /></a>
+</p>
 
 ---
 
-## 🌟 Core Features & The 6 Primary Screens
+## 📖 Executive Summary
 
-| Screen | Route | Description & Key Interactions |
-|---|---|---|
-| **Home** | `/` | Personalized welcome header, search bar shortcut, category filters with live badges, Chef's Pick hero banner with glass overlay, horizontal trending carousel, and editor's grid. |
-| **Explore / List** | `/` | Responsive multi-column grid, category filtering (`All`, `Quick & Easy`, `Healthy Meals`, `Desserts`), and sorting (Shortest Cook Time, Prep Time, Alphabetical A-Z). |
-| **Recipe Detail** | `/recipes/:recipeId` | Shared Hero photograph, description, prep/cook/total metrics, serving adjuster (`-` / `+`), **interactive checkable ingredients list**, numbered instructions, and clipboard recipe sharing. |
-| **Interactive Cooking Mode** | Modal / Sheet | Accessible from Recipe Detail via *"Enter Cooking Mode"*. Step-by-step cooking guide with step progress bar, pro chef tips, and a **real-time countdown kitchen timer** with Start, Pause, and Reset controls! |
-| **Search** | `/search?q=query` | Real-time search across titles, ingredients, descriptions, and tags. Supports **direct deep link with preserved query parameter** (`/search?q=pasta`), cook-time filters (`≤ 10 min`, `≤ 20 min`, `≤ 35 min`), and empty-state term suggestions. |
-| **Favorites** | `/favorites` | Reactive saved recipes collection backed by `shared_preferences`. Persists across device restarts. Features instantaneous optimistic heart toggle and clear-all with confirmation dialog. |
-| **Submit Recipe** | `/submit` | Validated recipe creation form with `GlobalKey<FormState>`, dynamic ingredient rows (`+ Add Row`), dynamic instruction steps (`+ Add Step`), time and serving numeric constraints, anti-double-submission guard, and hybrid cloud/local draft persistence. |
+**CookMate** is an offline-first, editorial culinary companion designed to elevate home cooking into a fine-dining experience. Crafted with **Material Design 3**, **Liquid Glassmorphism**, and **Riverpod** state management, CookMate pairs fluid physics with intelligent culinary utilities: dynamic ingredient scaling, synchronized kitchen timers, local cryptographic user vault, AI recipe auto-fill, and a front-camera portrait beauty studio.
 
 ---
 
-## 🏗️ Technical Architecture
+## ✨ Highlights & Key Innovations
 
-CookMate follows a clean, feature-first layered architecture:
-
-```
-lib/
-├── main.dart                               # App entry point (Firebase optional init + ProviderScope)
-├── app/
-│   ├── app.dart                            # MaterialApp.router configuration & theme wiring
-│   └── router.dart                         # GoRouter with StatefulShellRoute & deep links
-├── core/
-│   ├── constants/                          # App constants (categories, breakpoints, keys)
-│   └── theme/                              # Brand colors, typography, Material 3 ThemeData
-├── shared/
-│   └── widgets/                            # GlassSurface, RecipeCard, GlassSearchBar, FavoriteButton,
-│                                           # RecipeMetadataRow, CookingTimerSheet, EmptyState, Shimmer
-└── features/
-    ├── home/                               # Home discovery screen
-    ├── recipes/
-    │   ├── data/                           # LocalJsonRecipeDataSource & DefaultRecipeRepository
-    │   ├── domain/models/recipe.dart       # Typed Recipe model with derived totalMinutes
-    │   └── presentation/                   # ExploreScreen, RecipeDetailScreen, Riverpod providers
-    ├── search/                             # SearchScreen with query param synchronization
-    ├── favorites/                          # LocalFavoritesRepository (SharedPreferences) & FavoritesScreen
-    └── submission/                         # HybridRecipeSubmissionRepository & SubmitRecipeScreen
+```mermaid
+mindmap
+  root((CookMate))
+    Visual & UX
+      Liquid Glassmorphism
+      3D Gyro Tilt Logo
+      Chef's Pick Gesture Deck
+      Responsive Scaffold
+    Culinary Engine
+      Dynamic Serving Scaler
+      Step-Synchronized Timers
+      Recipe Search & Ranker
+    Chef Profile & Vault
+      Local SHA-256 Vault
+      Front Camera & Gallery Picker
+      Auto-Crop & Beauty Studio
+    Intelligence
+      Chef AI Recipe Auto-Fill
+      Unsplash Image Matcher
+      Smart PopScope Back Navigation
 ```
 
-### State Management: Riverpod
-* `recipeRepositoryProvider`: Singleton repository coordinating local seed data and user submissions.
-* `allRecipesProvider`: Asynchronous feed providing deduplicated recipes.
-* `favoritesNotifierProvider`: AsyncNotifier managing the `Set<String>` of saved recipe IDs with optimistic UI updates.
-* `favoriteRecipesProvider`: Reactive selector resolving favorite IDs against the recipe catalogue.
-* `searchFilterProvider` & `searchResultsProvider`: Live parameter filtering and multi-field keyword matching.
-* `themeModeProvider`: StateProvider toggling between Light and Dark themes.
+### 1. 🎨 Liquid Glassmorphism & Gourmet Palette
+* **Frosted Translucent Surfaces**: `BackdropFilter` Gaussian blur with specular hairline borders, ambient glows, and floating liquid cards.
+* **Gourmet Color Palette**:
+  * 🌲 **Forest Green** (`#173D31`) &mdash; Organic base
+  * 🌾 **Warm Cream** (`#F8F4EA`) &mdash; Editorial paper surface
+  * 🍋 **Citrus Lime** (`#D8F078`) &mdash; High-energy accent
+  * 🍉 **Soft Coral** (`#F18C72`) &mdash; Warm heart and alert highlights
+  * 🌑 **Deep Emerald Surface** (`#12251F`) &mdash; Rich OLED dark mode
+
+### 2. 🎴 Chef's Pick 3D Interactive Deck (`ChefPickDeck`)
+* Multi-card stacking deck with smooth spring physics, rotation dampening, and velocity-sensitive dismiss gestures.
+* Swipe left or right with instant haptic feedback to cycle through featured dishes.
+
+### 3. 🔍 Intelligent Recipe Search Engine
+* **Accent-Insensitive & Diacritic-Agnostic**: Matches `creme brulee` as accurately as `crème brûlée`.
+* **Incremental Prefix Search**: Real-time multi-token keyword ranking prioritizing exact title matches over ingredients and tags.
+* **Deep-Link Query Synchronization**: Supports direct URL navigation via `/search?q=pasta`.
+
+### 4. ⚖️ Interactive Serving Scaler & Checkable Ingredients
+* Automatically scales rational quantities, unit fractions (e.g., `1/2 cup` to `1 cup`), and complex package formats (e.g., `2 × 200g Wagyu`).
+* Interactive checkable ingredient list with animated strikethrough styling to track prep work in the kitchen.
+
+### 5. ⏱️ Synchronized Cooking Mode & Countdown Kitchen Timer
+* Step-by-step cooking sheet with individual instruction progress.
+* **Synchronized Step Timers**: Automatically parses duration text from steps (e.g., *"Simmer for 15 minutes"* &rarr; 15:00 timer).
+* Real-time timer with Pause, Resume, Reset, +30s, and +1m quick-adjust controls.
+* Zero pixel overflow guarantee across all compact mobile screens.
+
+### 6. 🔐 Chef Profile & Local Cryptographic Vault
+* Complete local authentication system with salt-hashed SHA-256 password security.
+* Guest Chef gateway with Remember Me support, password strength indicators (Weak to Formidable), and secure local account recovery.
+* Live recipe submission counts and personalized "My Kitchen Creations" showcase.
+
+### 7. 📸 Front Camera & Gallery Photo Studio with Beauty Filters
+* Take front-camera selfies or pick portraits directly from the phone photo gallery.
+* Automatic square center-cropping (1:1 ratio) and auto-orientation correction.
+* **Chef Beauty Studio**: Select from 4 real-time filters:
+  * 🌟 **Radiant Glow** &mdash; Soft lighting with balanced warm luminosity.
+  * 🌿 **Fresh & Crisp** &mdash; Vivid contrast and clean white balance.
+  * 🌅 **Warm Sunset** &mdash; Golden undertones for cozy warmth.
+  * 💎 **Studio Clean** &mdash; High-definition studio portrait clarity.
+* Resilient recovery against Android OS activity recreations.
+
+### 8. 🧑‍🍳 Chef AI Recipe Auto-Fill Engine
+* Enter a dish title (e.g., *"Red Velvet Cake"*) and category to trigger Chef AI synthesis.
+* Automatically generates authentic prep/cook times, chef-grade ingredient measurements, numbered instructions, and authentic high-resolution Unsplash food photography URLs.
+* Prepend newly created recipes immediately to Home, Explore, and Search feeds.
+
+### 9. 🛡️ System-Wide Smart Back Navigation (`PopScope`)
+* Intelligent hardware and gesture back button handling across every screen in the application.
+* Smoothly switches tabs back to Home (tab 0) when pressing back on Explore, Search, or Saved.
+* **Double-Back-to-Exit Guard**: Shows a floating toast (*"Press back again to exit CookMate"*) on Home to prevent accidental closures.
+* Comprehensive route fallbacks guarantee users are never trapped on nested screens.
+
+### 10. 📐 Adaptive Responsive Scaffolding
+* **Mobile Portrait**: Liquid-glass floating bottom navigation bar.
+* **Compact Landscape**: Side `NavigationRail` wrapped in scrollable bounded constraints with auto-collapsing icons, eliminating `RenderFlex` overflow during phone tilt.
+* **Tablet & Desktop**: Multi-column editorial grid with max-content boundary (`1200px`).
 
 ---
 
-## 📦 Bundled 15-Recipe JSON Dataset
+## 🏗️ System Architecture
 
-Located at [`assets/data/recipes.json`](assets/data/recipes.json) and parsed through typed `Recipe.fromJson()`:
+```mermaid
+graph TD
+    UI["Flutter Presentation Layer (Widgets & Slivers)"]
+    State["Riverpod State Management Layer (Notifiers & Providers)"]
+    Domain["Domain Logic Layer (Entities, Scalers, Search Engine, Beauty Filters)"]
+    Data["Data Layer (Local JSON Seed, SharedPreferences Vault, Document Storage)"]
 
-* **Quick & Easy**:
-  1. `classic-pasta` — Creamy Tomato Basil Pasta
-  2. `vegetable-stir-fry` — Crispy Sesame Vegetable Stir-Fry
-  3. `chicken-wrap` — Mediterranean Herb Chicken Wrap
-  4. `garlic-fried-rice` — Golden Garlic Scallion Fried Rice
-  5. `tomato-omelette` — Rustic Garden Tomato & Herb Omelette
-* **Healthy Meals**:
-  6. `grilled-chicken-bowl` — Green Goddess Grilled Chicken Bowl
-  7. `quinoa-salad` — Zesty Mediterranean Quinoa Crunch Salad
-  8. `baked-salmon` — Garlic Herb Butter Sheet Pan Salmon
-  9. `lentil-soup` — Golden Turmeric French Lentil Soup
-  10. `avocado-toast` — Artisanal Sourdough Avocado Tartine
-* **Desserts**:
-  11. `chocolate-brownies` — Fudgy Double Dark Chocolate Brownies
-  12. `strawberry-cheesecake` — Velvety Strawberry Swirl Cheesecake
-  13. `banana-pancakes` — Fluffy Soufflé Banana Oatmeal Pancakes
-  14. `mango-pudding` — Silky Tropical Alphonso Mango Pudding
-  15. `apple-crumble` — Warm Cinnamon Honeycrisp Apple Crumble
+    UI -->|Watches State| State
+    UI -->|Dispatches Events| State
+    State -->|Coordinates| Domain
+    State -->|Reads / Writes| Data
+    Domain -->|Implements Models| Data
+```
+
+For the complete architectural blueprint and detailed data flow diagrams, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ---
 
-## 🚀 Setup & Running Instructions
+## 📂 Project Structure
+
+```
+CookMate/
+├── android/                                 # Native Android wrapper and Gradle configuration
+├── assets/
+│   ├── data/
+│   │   └── recipes.json                     # Seed catalogue of 15 gourmet recipes
+│   └── images/
+│       ├── app_logo.png                     # Transparent 3D chef logo badge
+│       └── splash_preview.png               # High-res splash illustration
+├── lib/
+│   ├── main.dart                            # Entry point with ProviderScope initialization
+│   ├── app/
+│   │   ├── app.dart                         # MaterialApp.router configuration
+│   │   └── router.dart                      # GoRouter StatefulShellRoute & route transitions
+│   ├── core/
+│   │   ├── constants/                       # AppConstants (categories, breakpoints, keys)
+│   │   └── theme/                           # AppColors & AppTheme (Material 3 themes)
+│   ├── features/
+│   │   ├── auth/                            # Chef Auth & Profile (Vault & Beauty Studio)
+│   │   ├── favorites/                       # Saved Recipes & Bookmark Notifiers
+│   │   ├── home/                            # Home screen & Chef's Pick 3D Deck
+│   │   ├── recipes/                         # Explore, Detail, Scaling & Search logic
+│   │   ├── search/                          # Find a Dish screen & query synchronization
+│   │   ├── splash/                          # 3D logo physics splash screen
+│   │   └── submission/                      # Share a Recipe form & Chef AI Auto-Fill
+│   └── shared/
+│       └── widgets/                         # Reusable GlassCards, BounceTap, Timers, Badges
+├── test/
+│   ├── unit/                                # Comprehensive unit tests (Auth, Scaler, Search, Filters)
+│   ├── widget_test.dart                     # UI & Responsive orientation tests
+│   └── widget_timer_test.dart               # Cooking timer sheet tests
+├── pubspec.yaml                             # Package dependencies & asset declarations
+├── ARCHITECTURE.md                          # Detailed architectural specification
+└── README.md                                # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-* **Flutter SDK**: `^3.47.2` (Channel stable)
-* **Dart SDK**: `^3.13.2`
-* Supported targets: **Android**, **iOS**, **Web (Chrome / Edge)**, **Windows Desktop**
+* [Flutter SDK](https://flutter.dev/docs/get-started/install) (`^3.22.0` or later)
+* [Dart SDK](https://dart.dev/get-dart) (`^3.4.0` or later)
+* Android Studio / Xcode / VS Code with Flutter extension
+* An Android device or emulator (API 24+)
 
-### Installation
-```bash
-# 1. Clone repository
-git clone <your-github-repo-url>
-cd CookMate
+### Installation & Run
 
-# 2. Fetch dependencies
-flutter pub get
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/AbdullahAzeem12/CookMate.git
+   cd CookMate
+   ```
 
-# 3. Verify code formatting and static analysis
-dart format .
-flutter analyze
+2. **Install dependencies**:
+   ```bash
+   flutter pub get
+   ```
 
-# 4. Run automated test suite (13 unit and widget tests)
-flutter test
+3. **Verify static analysis**:
+   ```bash
+   flutter analyze
+   ```
 
-# 5. Launch application on Chrome or connected device
-flutter run -d chrome
-# or on Windows desktop:
-flutter run -d windows
-```
+4. **Run automated test suite**:
+   ```bash
+   flutter test
+   ```
 
----
-
-## ☁️ Firebase Backend & Security Rules
-
-CookMate is **offline-first**: it boots up and operates with the complete 15-recipe dataset without requiring active cloud credentials. When Firebase is configured, community submissions are saved to Cloud Firestore under `recipe_submissions`.
-
-### Firestore Security Rules (`firestore.rules`)
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /recipes/{recipeId} {
-      allow read: if true;
-      allow write: if false; // Only Admin SDK
-    }
-    match /recipe_submissions/{submissionId} {
-      allow read: if request.auth != null;
-      allow create: if request.resource.data.status == 'pending' &&
-                       request.resource.data.title.size() >= 3 &&
-                       request.resource.data.prepMinutes >= 1 &&
-                       request.resource.data.servings >= 1;
-      allow update, delete: if request.auth != null && request.auth.uid == resource.data.authorUid;
-    }
-  }
-}
-```
-
-### Optional Firebase Setup Steps
-1. Install FlutterFire CLI: `dart pub global activate flutterfire_cli`
-2. Run `flutterfire configure` and select your Firebase project.
-3. Deploy security rules: `firebase deploy --only firestore:rules`
+5. **Launch CookMate on your connected device**:
+   ```bash
+   flutter run
+   ```
 
 ---
 
-## 🧪 Automated Testing Suite
+## 🧪 Automated Testing & Code Verification
 
-The project includes unit and widget tests covering all critical paths:
+CookMate is backed by **61 passing automated tests** across unit, domain, repository, and widget layers:
 
 ```bash
-flutter test
+$ flutter test
+00:19 +61: All tests passed!
 ```
 
-### Test Coverage Highlights:
-- ✅ **Recipe Model**: Complete JSON parsing, missing/null field fallback resilience, and derived `totalMinutes` verification.
-- ✅ **Recipe Repository**: Category filtering, multi-field keyword search (titles, ingredients, tags), maximum cooking time thresholds, sorting, and submission deduplication.
-- ✅ **Favorites Repository**: Persistence in `shared_preferences`, duplicate prevention, removal, and collection purging.
-- ✅ **Widget Tests**: Application boot, responsive navigation shell, category shortcut rendering, branch tab navigation across Explore, Search, and Saved.
-
----
-
-## 📹 Screen Recording Demo Script (2–3 Minutes)
-
-1. **Introduction & Home Screen (0:00–0:35)**:
-   - Introduce CookMate and highlight the liquid-glass design tokens and Material Design 3 theme.
-   - Showcase the personalized welcome header, search pill, category shortcuts, Chef's Pick hero card, and the horizontal trending carousel.
-   - Tap the theme mode switcher in the top bar to demonstrate the light/dark mode transition.
-2. **Explore & Filtering (0:35–1:00)**:
-   - Navigate to the **Explore** tab. Filter by "Quick & Easy", "Healthy Meals", and "Desserts".
-   - Demonstrate the sort menu (Shortest Cook Time, Prep Time, Alphabetical).
-3. **Recipe Detail & Hero Animation (1:00–1:35)**:
-   - Tap "Creamy Tomato Basil Pasta" to show the smooth **Hero image transition**.
-   - Adjust servings using `-` / `+` stepper.
-   - Tap ingredient checkboxes to check off items while preparing.
-   - Tap **"Enter Cooking Mode"** to launch the step-by-step sheet with the **live countdown timer**!
-4. **Search with Deep Linking (1:35–1:55)**:
-   - Navigate to **Search**, enter "quinoa" or "chocolate", and observe real-time search results.
-   - Demonstrate cooking time pill filters (`≤ 15 min`).
-5. **Favorites & Persistence (1:55–2:15)**:
-   - Heart 2 recipes. Navigate to the **Saved** tab to see them displayed.
-   - Reload/restart the app to demonstrate that favorites persist via `shared_preferences`.
-6. **Recipe Submission (2:15–2:45)**:
-   - Tap the `+` Submit Recipe action.
-   - Attempt submission with empty fields to show validation errors.
-   - Fill in a community recipe with dynamic ingredient/step rows, submit, and see it immediately appear in the cookbook!
-7. **Responsive Layout & Wrap-Up (2:45–3:00)**:
-   - Resize browser / window to show tablet & desktop Navigation Rail adaptation.
+* **Unit & Domain Tests**:
+  * `auth_system_test.dart`: Validates email formats, password strength algorithms, SHA-256 vault encryption, duplicate rejection, and session persistence.
+  * `avatar_processor_test.dart`: Validates 1:1 square center-cropping, beauty filter transforms, and compute worker safety.
+  * `recipe_scaler_test.dart`: Validates serving scaling, vulgar fractions, and multi-token unit preservation.
+  * `recipe_search_engine_test.dart`: Validates diacritic normalization, prefix matching, and multi-criteria sorting.
+  * `smart_recipe_autofill_test.dart`: Validates Chef AI signature dish recognition, instruction generation, and Unsplash URL mapping.
+* **Widget & Integration Tests**:
+  * `widget_test.dart`: Verifies responsive phone tilt transitions, gesture deck physics, and navigation flows.
+  * `widget_timer_test.dart`: Verifies synchronous cooking timer sheet rendering with zero pixel overflows.
 
 ---
 
 ## 📄 License
-This project is licensed under the MIT License.
+
+This project is licensed under the MIT License &mdash; see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Crafted with passion by <strong>Abdullah Azeem</strong> 👨‍🍳✨
+</p>

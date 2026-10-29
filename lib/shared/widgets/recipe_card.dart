@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../features/recipes/domain/models/recipe.dart';
+import 'app_cached_network_image.dart';
+import 'bounce_tap.dart';
 import 'favorite_button.dart';
 import 'glass_card.dart';
 import 'recipe_metadata_row.dart';
@@ -11,13 +13,46 @@ class RecipeCard extends StatelessWidget {
   final Recipe recipe;
   final bool isFeatured;
   final VoidCallback? onTap;
+  final String? heroTagPrefix;
 
   const RecipeCard({
     super.key,
     required this.recipe,
     this.isFeatured = false,
     this.onTap,
+    this.heroTagPrefix,
   });
+
+  String? get _resolvedHeroTag {
+    if (heroTagPrefix != null && heroTagPrefix!.isNotEmpty) {
+      return '$heroTagPrefix-${recipe.id}';
+    }
+    if (isFeatured) {
+      return 'featured-${recipe.id}';
+    }
+    return null;
+  }
+
+  void _navigateToDetail(BuildContext context) {
+    if (onTap != null) {
+      onTap!();
+      return;
+    }
+    final tag = _resolvedHeroTag;
+    if (tag != null) {
+      context.push('/recipes/${recipe.id}?heroTag=$tag');
+    } else {
+      context.push('/recipes/${recipe.id}');
+    }
+  }
+
+  Widget _wrapHero(Widget child) {
+    final tag = _resolvedHeroTag;
+    if (tag != null) {
+      return Hero(tag: tag, child: child);
+    }
+    return child;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +70,13 @@ class RecipeCard extends StatelessWidget {
       label:
           'Recipe ${recipe.title}, ${recipe.category}, ${recipe.totalMinutes} minutes',
       button: true,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onTap ?? () => context.push('/recipes/${recipe.id}'),
-          borderRadius: BorderRadius.circular(22),
-          child: Container(
+      child: BounceTap(
+        onTap: () => _navigateToDetail(context),
+        shrinkScale: 0.91,
+        downDuration: const Duration(milliseconds: 70),
+        upDuration: const Duration(milliseconds: 140),
+        awaitBounce: true,
+        child: Container(
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF162D25) : Colors.white,
               borderRadius: BorderRadius.circular(22),
@@ -72,16 +108,14 @@ class RecipeCard extends StatelessWidget {
                       ),
                       child: hasBoundedHeight
                           ? SizedBox.expand(
-                              child: Hero(
-                                tag: 'recipe-image-${recipe.id}',
-                                child: _buildNetworkImage(recipe.imageUrl),
+                              child: _wrapHero(
+                                _buildNetworkImage(recipe.imageUrl),
                               ),
                             )
                           : AspectRatio(
                               aspectRatio: 1.35,
-                              child: Hero(
-                                tag: 'recipe-image-${recipe.id}',
-                                child: _buildNetworkImage(recipe.imageUrl),
+                              child: _wrapHero(
+                                _buildNetworkImage(recipe.imageUrl),
                               ),
                             ),
                     ),
@@ -138,6 +172,8 @@ class RecipeCard extends StatelessWidget {
                         servings: recipe.servings,
                         difficulty: recipe.difficulty,
                         isDarkText: true,
+                        prepMinutes: recipe.prepMinutes,
+                        cookMinutes: recipe.cookMinutes,
                       ),
                     ],
                   ),
@@ -157,21 +193,21 @@ class RecipeCard extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildFeaturedCard(BuildContext context) {
     return Semantics(
       label: 'Featured Recipe ${recipe.title}, ${recipe.category}',
       button: true,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onTap ?? () => context.push('/recipes/${recipe.id}'),
-          borderRadius: BorderRadius.circular(28),
-          child: Container(
-            height: 320,
+      child: BounceTap(
+        onTap: () => _navigateToDetail(context),
+        shrinkScale: 0.93,
+        downDuration: const Duration(milliseconds: 75),
+        upDuration: const Duration(milliseconds: 145),
+        awaitBounce: true,
+        child: Container(
+          height: 320,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               boxShadow: [
@@ -188,10 +224,7 @@ class RecipeCard extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   // Background Hero Image
-                  Hero(
-                    tag: 'recipe-image-${recipe.id}',
-                    child: _buildNetworkImage(recipe.imageUrl),
-                  ),
+                  _wrapHero(_buildNetworkImage(recipe.imageUrl)),
                   // Rich Dark Gradient Overlay
                   Container(
                     decoration: const BoxDecoration(
@@ -284,6 +317,8 @@ class RecipeCard extends StatelessWidget {
                             servings: recipe.servings,
                             difficulty: recipe.difficulty,
                             isDarkText: false,
+                            prepMinutes: recipe.prepMinutes,
+                            cookMinutes: recipe.cookMinutes,
                           ),
                         ],
                       ),
@@ -294,72 +329,16 @@ class RecipeCard extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildNetworkImage(String url) {
-    if (url.isEmpty) {
-      return _buildImagePlaceholder();
-    }
-
-    return Image.network(
-      url,
+    return AppCachedNetworkImage(
+      imageUrl: url,
+      category: recipe.category,
       fit: BoxFit.cover,
       width: double.infinity,
       height: double.infinity,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) return child;
-        return Container(
-          color: const Color(0xFF1E352C),
-          child: Center(
-            child: CircularProgressIndicator(
-              strokeWidth: 2,
-              value: loadingProgress.expectedTotalBytes != null
-                  ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
-                  : null,
-              color: AppColors.citrusLime,
-            ),
-          ),
-        );
-      },
-      errorBuilder: (context, error, stackTrace) {
-        return _buildImagePlaceholder();
-      },
-    );
-  }
-
-  Widget _buildImagePlaceholder() {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFF173D31), Color(0xFF2C5547)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              Icons.restaurant_menu_rounded,
-              size: 36,
-              color: AppColors.citrusLime.withValues(alpha: 0.8),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              recipe.category,
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.7),
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

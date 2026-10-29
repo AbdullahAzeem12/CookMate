@@ -64,7 +64,7 @@ class SearchFilterState {
     this.query = '',
     this.category = 'All',
     this.maxCookTime,
-    this.sortBy = 'quickest',
+    this.sortBy = 'relevance',
   });
 
   SearchFilterState copyWith({
@@ -96,5 +96,17 @@ final searchResultsProvider = FutureProvider<List<Recipe>>((ref) async {
     category: filter.category == 'All' ? null : filter.category,
     maxCookTime: filter.maxCookTime,
     sortBy: filter.sortBy,
+  );
+});
+
+/// Chef's Pick curated deck — recipes flagged with isChefsPick == true.
+/// Used by the diagonal swipe card deck on the Home screen.
+final chefsPickRecipesProvider = Provider<List<Recipe>>((ref) {
+  final allAsync = ref.watch(allRecipesProvider);
+  return allAsync.when(
+    data: (recipes) =>
+        recipes.where((r) => r.isChefsPick).toList(),
+    loading: () => [],
+    error: (_, __) => [],
   );
 });

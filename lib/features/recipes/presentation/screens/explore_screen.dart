@@ -177,7 +177,10 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                         ),
                     itemCount: filtered.length,
                     itemBuilder: (context, index) {
-                      return RecipeCard(recipe: filtered[index]);
+                      return RecipeCard(
+                        recipe: filtered[index],
+                        heroTagPrefix: 'explore',
+                      );
                     },
                   );
                 },

@@ -68,3 +68,5 @@ migrate_working_dir/
 # Windows related
 **/windows/flutter/ephemeral/
 **/windows/flutter/generated_plugin_registrant.cc
+# Widget Preview related
+.widget_preview/

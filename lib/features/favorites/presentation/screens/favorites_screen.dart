@@ -87,6 +87,7 @@ class FavoritesScreen extends ConsumerWidget {
                 message: 'Tap the heart icon on any recipe to save your favorite dishes here for quick cooking.',
                 actionLabel: 'Discover Recipes',
                 onAction: () => context.go('/recipes'),
+                showLogo: true,
               );
             }
 
@@ -143,7 +144,10 @@ class FavoritesScreen extends ConsumerWidget {
                           childAspectRatio: 0.70,
                         ),
                     delegate: SliverChildBuilderDelegate(
-                      (context, index) => RecipeCard(recipe: recipes[index]),
+                      (context, index) => RecipeCard(
+                        recipe: recipes[index],
+                        heroTagPrefix: 'fav',
+                      ),
                       childCount: recipes.length,
                     ),
                   ),

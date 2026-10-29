@@ -2,13 +2,64 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Helper functions
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: recipes
+    // Document ID: {recipeId}
+    // Fields:
+    //   - Read: Publicly accessible by all users (read-only for clients)
+    //   - Write: Denied for clients (managed via Firebase Admin SDK / Cloud Functions)
+    //
+    // Collection: recipe_submissions
+    // Document ID: {submissionId}
+    // Fields:
+    //   - id: string (required, immutable) - Unique submission/recipe ID
+    //   - authorUid: string (required, immutable) - UID of author (must match request.auth.uid on create)
+    //   - status: string (required, 'pending' on create, immutable on client update)
+    //   - title: string (required, 3-100 characters) - Title of the recipe
+    //   - category: string (required, in ['Quick & Easy', 'Healthy Meals', 'Desserts'])
+    //   - prepMinutes: int (required, >= 1) - Preparation time in minutes
+    //   - cookMinutes: int (required, >= 0) - Cooking time in minutes
+    //   - servings: int (required, 1..50) - Serving portions
+    //   - difficulty: string (required, in ['Easy', 'Medium', 'Hard'])
+    //   - description: string (optional)
+    //   - imageUrl: string (optional)
+    //   - ingredients: list (optional)
+    //   - instructions: list (optional)
+    //   - tags: list (optional)
+    //   - createdAt: timestamp (optional)
+    //   - isCommunitySubmission: bool (optional)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
     function isAuthenticated() {
       return request.auth != null;
     }
 
     function isAuthor(authorUid) {
       return isAuthenticated() && request.auth.uid == authorUid;
+    }
+
+    // Domain Validator: Enforces core recipe field data constraints on create and update
+    function isValidRecipeData(data) {
+      return data.title is string &&
+        data.title.size() >= 3 &&
+        data.title.size() <= 100 &&
+        data.prepMinutes is int &&
+        data.prepMinutes >= 1 &&
+        data.cookMinutes is int &&
+        data.cookMinutes >= 0 &&
+        data.servings is int &&
+        data.servings >= 1 &&
+        data.servings <= 50 &&
+        data.difficulty in ['Easy', 'Medium', 'Hard'] &&
+        data.category in ['Quick & Easy', 'Healthy Meals', 'Desserts'];
     }
 
     // Public Approved Recipes collection
@@ -19,37 +70,29 @@ service cloud.firestore {
 
     // Recipe Submissions collection
     match /recipe_submissions/{submissionId} {
-      // Anyone can read their own submissions or approved submissions
+      // Anyone authenticated can read their own submissions or approved submissions
       allow read: if isAuthenticated() && (
         resource.data.authorUid == request.auth.uid ||
         resource.data.status == 'approved'
       );
 
       // Submission creation rule
-      allow create: if (
-        // Allow client submissions with pending status
+      allow create: if isAuthenticated() &&
         request.resource.data.keys().hasAll([
-          'id', 'title', 'category', 'prepMinutes', 'cookMinutes', 'servings', 'difficulty', 'status'
+          'id', 'title', 'category', 'prepMinutes', 'cookMinutes', 'servings', 'difficulty', 'status', 'authorUid'
         ]) &&
+        request.resource.data.authorUid == request.auth.uid &&
         request.resource.data.status == 'pending' &&
-        request.resource.data.title is string &&
-        request.resource.data.title.size() >= 3 &&
-        request.resource.data.title.size() <= 100 &&
-        request.resource.data.prepMinutes is int &&
-        request.resource.data.prepMinutes >= 1 &&
-        request.resource.data.cookMinutes is int &&
-        request.resource.data.cookMinutes >= 0 &&
-        request.resource.data.servings is int &&
-        request.resource.data.servings >= 1 &&
-        request.resource.data.servings <= 50 &&
-        request.resource.data.difficulty in ['Easy', 'Medium', 'Hard'] &&
-        request.resource.data.category in ['Quick & Easy', 'Healthy Meals', 'Desserts']
-      );
+        isValidRecipeData(request.resource.data);
 
-      // Clients cannot approve their own submissions
+      // Submission update rule: Author only, status and immutable fields protected, re-validating data constraints
       allow update: if isAuthor(resource.data.authorUid) &&
-                       request.resource.data.status == resource.data.status;
+        request.resource.data.authorUid == resource.data.authorUid &&
+        request.resource.data.id == resource.data.id &&
+        request.resource.data.status == resource.data.status &&
+        isValidRecipeData(request.resource.data);
 
+      // Submission deletion rule: Author only
       allow delete: if isAuthor(resource.data.authorUid);
     }
   }

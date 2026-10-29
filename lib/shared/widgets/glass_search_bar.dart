@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
+import 'bounce_tap.dart';
 import 'glass_card.dart';
 
 class GlassSearchBar extends StatelessWidget {
@@ -84,12 +85,10 @@ class GlassSearchBar extends StatelessWidget {
           if (showFilterButton)
             Container(
               margin: const EdgeInsets.only(left: 6),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: onFilterTap,
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
+              child: BounceTap(
+                onTap: onFilterTap,
+                shrinkScale: 0.88,
+                child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: activeFilterCount > 0
@@ -134,7 +133,6 @@ class GlassSearchBar extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
         ],
       ),
     );

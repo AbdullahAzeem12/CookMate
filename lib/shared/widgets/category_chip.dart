@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
+import 'bounce_tap.dart';
 
 class CategoryChip extends StatelessWidget {
   final String label;
@@ -37,54 +38,49 @@ class CategoryChip extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(right: 10),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.easeInOut,
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: onTap,
+      child: BounceTap(
+        onTap: onTap,
+        shrinkScale: 0.92,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          decoration: BoxDecoration(
+            color: bgColor,
             borderRadius: BorderRadius.circular(30),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: borderColor, width: 1.2),
-                boxShadow: isSelected
-                    ? [
-                        BoxShadow(
-                          color:
-                              (isDark
-                                      ? AppColors.citrusLime
-                                      : AppColors.forestGreen)
-                                  .withValues(alpha: 0.25),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
-                        ),
-                      ]
-                    : null,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (icon != null) ...[
-                    Icon(icon, size: 16, color: textColor),
-                    const SizedBox(width: 8),
-                  ],
-                  Text(
-                    label,
-                    style: TextStyle(
-                      color: textColor,
-                      fontSize: 14,
-                      fontWeight: isSelected
-                          ? FontWeight.w700
-                          : FontWeight.w500,
+            border: Border.all(color: borderColor, width: 1.2),
+            boxShadow: isSelected
+                ? [
+                    BoxShadow(
+                      color:
+                          (isDark
+                                  ? AppColors.citrusLime
+                                  : AppColors.forestGreen)
+                              .withValues(alpha: 0.25),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
                     ),
-                  ),
-                ],
+                  ]
+                : null,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (icon != null) ...[
+                Icon(icon, size: 16, color: textColor),
+                const SizedBox(width: 8),
+              ],
+              Text(
+                label,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 14,
+                  fontWeight: isSelected
+                      ? FontWeight.w700
+                      : FontWeight.w500,
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),

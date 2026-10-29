@@ -11,10 +11,13 @@ class Recipe {
   final int servings;
   final String difficulty;
   final List<String> tags;
+  final String? chefNotes;
   final DateTime? createdAt;
   final bool isCommunitySubmission;
   final String? authorUid;
   final String status;
+  /// Whether this recipe is curated as a Chef's Pick card-deck entry.
+  final bool isChefsPick;
 
   const Recipe({
     required this.id,
@@ -29,10 +32,12 @@ class Recipe {
     required this.servings,
     required this.difficulty,
     required this.tags,
+    this.chefNotes,
     this.createdAt,
     this.isCommunitySubmission = false,
     this.authorUid,
     this.status = 'approved',
+    this.isChefsPick = false,
   });
 
   /// Derived total cooking time
@@ -67,12 +72,14 @@ class Recipe {
               .where((s) => s.isNotEmpty)
               .toList() ??
           [],
+      chefNotes: json['chefNotes'] as String?,
       createdAt: json['createdAt'] != null
           ? DateTime.tryParse(json['createdAt'] as String)
           : null,
       isCommunitySubmission: json['isCommunitySubmission'] as bool? ?? false,
       authorUid: json['authorUid'] as String?,
       status: json['status'] as String? ?? 'approved',
+      isChefsPick: json['isChefsPick'] as bool? ?? false,
     );
   }
 
@@ -90,10 +97,12 @@ class Recipe {
       'servings': servings,
       'difficulty': difficulty,
       'tags': tags,
+      'chefNotes': chefNotes,
       'createdAt': createdAt?.toIso8601String(),
       'isCommunitySubmission': isCommunitySubmission,
       'authorUid': authorUid,
       'status': status,
+      'isChefsPick': isChefsPick,
     };
   }
 
@@ -110,10 +119,12 @@ class Recipe {
     int? servings,
     String? difficulty,
     List<String>? tags,
+    String? chefNotes,
     DateTime? createdAt,
     bool? isCommunitySubmission,
     String? authorUid,
     String? status,
+    bool? isChefsPick,
   }) {
     return Recipe(
       id: id ?? this.id,
@@ -128,11 +139,13 @@ class Recipe {
       servings: servings ?? this.servings,
       difficulty: difficulty ?? this.difficulty,
       tags: tags ?? this.tags,
+      chefNotes: chefNotes ?? this.chefNotes,
       createdAt: createdAt ?? this.createdAt,
       isCommunitySubmission:
           isCommunitySubmission ?? this.isCommunitySubmission,
       authorUid: authorUid ?? this.authorUid,
       status: status ?? this.status,
+      isChefsPick: isChefsPick ?? this.isChefsPick,
     );
   }
 

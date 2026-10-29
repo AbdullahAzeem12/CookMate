@@ -4,12 +4,18 @@
     "title": "Creamy Tomato Basil Pasta",
     "description": "Al dente rigatoni tossed in a velvety slow-simmered San Marzano tomato cream sauce, garnished with fragrant torn sweet basil and freshly grated 24-month Parmigiano-Reggiano.",
     "category": "Quick & Easy",
-    "imageUrl": "https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=1200&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
     "prepMinutes": 10,
     "cookMinutes": 15,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Pasta", "Italian", "Vegetarian", "Quick", "Comfort Food"],
+    "tags": [
+      "Pasta",
+      "Italian",
+      "Vegetarian",
+      "Quick",
+      "Comfort Food"
+    ],
     "ingredients": [
       "250g Rigatoni or Penne pasta",
       "1 can (400g) San Marzano crushed tomatoes",
@@ -28,7 +34,9 @@
       "Stir in heavy cream and half of the grated Parmesan, simmering for 2 minutes into a luscious rose blush sauce.",
       "Toss cooked pasta and a splash of reserved pasta water into the sauce, coating every piece. Remove from heat, fold in fresh basil, and top with remaining Parmesan."
     ],
-    "createdAt": "2026-01-15T12:00:00.000Z"
+    "createdAt": "2026-01-15T12:00:00.000Z",
+    "chefNotes": "Always reserve at least half a cup of starchy pasta water before draining. The emulsion of starches and fat from the cream creates a silky restaurant-quality sheen that clings to every rigatoni ridge.",
+    "isChefsPick": true
   },
   {
     "id": "vegetable-stir-fry",
@@ -40,7 +48,13 @@
     "cookMinutes": 8,
     "servings": 3,
     "difficulty": "Easy",
-    "tags": ["Vegan", "Stir-fry", "Asian", "Crispy", "Healthy"],
+    "tags": [
+      "Vegan",
+      "Stir-fry",
+      "Asian",
+      "Crispy",
+      "Healthy"
+    ],
     "ingredients": [
       "1 head Broccoli, cut into small florets",
       "1 Red bell pepper, thinly sliced",
@@ -60,7 +74,9 @@
       "Toss in sliced bell pepper and snap peas, stirring continuously for an additional 2 minutes.",
       "Pour glaze over the vegetables, tossing rapidly until glistening and lightly caramelized. Garnish with toasted sesame seeds and serve immediately."
     ],
-    "createdAt": "2026-01-16T14:30:00.000Z"
+    "createdAt": "2026-01-16T14:30:00.000Z",
+    "chefNotes": "For authentic wok hei (breath of the wok), cook your vegetables in small batches over the highest possible heat without crowding the pan. Overcrowding steams vegetables instead of blistering them.",
+    "isChefsPick": false
   },
   {
     "id": "chicken-wrap",
@@ -72,7 +88,13 @@
     "cookMinutes": 10,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Chicken", "Mediterranean", "High Protein", "Lunch", "Wrap"],
+    "tags": [
+      "Chicken",
+      "Mediterranean",
+      "High Protein",
+      "Lunch",
+      "Wrap"
+    ],
     "ingredients": [
       "300g Boneless chicken breast, sliced into cutlets",
       "2 Large whole wheat or Lebanese flatbreads",
@@ -91,7 +113,9 @@
       "Spread a generous spoonful of tzatziki across the center of each flatbread.",
       "Layer shredded Romaine, diced cucumber, tomatoes, and warm sliced chicken. Roll tightly, slice diagonally, and enjoy warm."
     ],
-    "createdAt": "2026-01-17T11:15:00.000Z"
+    "createdAt": "2026-01-17T11:15:00.000Z",
+    "chefNotes": "Pounding the chicken breast to uniform 1/2-inch thickness ensures even cooking so the edges don't dry out while the center reaches 165°F. Marinating in lemon juice tenderizes the protein fibers naturally.",
+    "isChefsPick": false
   },
   {
     "id": "garlic-fried-rice",
@@ -103,7 +127,13 @@
     "cookMinutes": 10,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Rice", "Quick", "Comfort Food", "Egg", "Scallion"],
+    "tags": [
+      "Rice",
+      "Quick",
+      "Comfort Food",
+      "Egg",
+      "Scallion"
+    ],
     "ingredients": [
       "3 cups Cooked jasmine rice (preferably day-old and chilled)",
       "6 cloves Fresh garlic, thinly sliced",
@@ -122,7 +152,9 @@
       "Drizzle soy sauce, sesame oil, and white pepper around the wok perimeter, tossing rice briskly over high heat for 3 minutes.",
       "Fold in green scallions and top with crispy garlic chips before serving piping hot."
     ],
-    "createdAt": "2026-01-18T09:00:00.000Z"
+    "createdAt": "2026-01-18T09:00:00.000Z",
+    "chefNotes": "Always use cold, day-old cooked jasmine rice. Freshly cooked rice holds excess moisture that will turn mushy in the wok. Frying garlic slices over low heat first infuses the cooking oil with sweet, nutty notes.",
+    "isChefsPick": false
   },
   {
     "id": "tomato-omelette",
@@ -134,7 +166,13 @@
     "cookMinutes": 7,
     "servings": 1,
     "difficulty": "Easy",
-    "tags": ["Breakfast", "Eggs", "Keto", "Vegetarian", "Quick"],
+    "tags": [
+      "Breakfast",
+      "Eggs",
+      "Keto",
+      "Vegetarian",
+      "Quick"
+    ],
     "ingredients": [
       "3 Fresh pasture-raised eggs",
       "1/2 cup Sweet cherry tomatoes, halved",
@@ -151,7 +189,9 @@
       "While the center remains custard-soft, arrange blistered tomatoes and goat cheese over one half.",
       "Carefully fold the other half over, slide onto a warm plate, and finish with fresh chives and freshly ground black pepper."
     ],
-    "createdAt": "2026-01-19T08:30:00.000Z"
+    "createdAt": "2026-01-19T08:30:00.000Z",
+    "chefNotes": "Keep the heat low and push cooked curds toward the center with a silicone spatula, tilting the pan so uncooked eggs flow to the perimeter. Remove from heat while the surface is still slightly creamy—residual heat finishes cooking.",
+    "isChefsPick": false
   },
   {
     "id": "grilled-chicken-bowl",
@@ -163,7 +203,13 @@
     "cookMinutes": 20,
     "servings": 2,
     "difficulty": "Medium",
-    "tags": ["Healthy", "High Protein", "Grain Bowl", "Avocado", "Gluten-Free"],
+    "tags": [
+      "Healthy",
+      "High Protein",
+      "Grain Bowl",
+      "Avocado",
+      "Gluten-Free"
+    ],
     "ingredients": [
       "2 Boneless chicken breasts (350g)",
       "1 cup Cooked tri-color quinoa",
@@ -183,7 +229,9 @@
       "Divide baby spinach and warm quinoa between two wide artisanal bowls.",
       "Arrange sliced chicken, roasted sweet potatoes, and avocado fans over the grains. Drizzle green goddess dressing and sprinkle crunchy pepitas."
     ],
-    "createdAt": "2026-01-20T17:00:00.000Z"
+    "createdAt": "2026-01-20T17:00:00.000Z",
+    "chefNotes": "Rest your grilled chicken on a cutting board for at least 5 minutes before slicing. Cutting into hot poultry immediately causes the moisture to pool on the board instead of staying inside the meat.",
+    "isChefsPick": true
   },
   {
     "id": "quinoa-salad",
@@ -195,7 +243,13 @@
     "cookMinutes": 15,
     "servings": 4,
     "difficulty": "Easy",
-    "tags": ["Salad", "Mediterranean", "Quinoa", "Vegetarian", "Meal Prep"],
+    "tags": [
+      "Salad",
+      "Mediterranean",
+      "Quinoa",
+      "Vegetarian",
+      "Meal Prep"
+    ],
     "ingredients": [
       "1 cup Dry white quinoa, rinsed thoroughly",
       "2 cups Crisp Persian cucumbers, diced small",
@@ -216,7 +270,9 @@
       "Fold in cooled fluffy quinoa and gently toss until evenly dressed.",
       "Crumble feta cheese over top and refrigerate for 20 minutes before serving for maximum flavor melding."
     ],
-    "createdAt": "2026-01-21T13:45:00.000Z"
+    "createdAt": "2026-01-21T13:45:00.000Z",
+    "chefNotes": "Rinsing quinoa in a fine-mesh strainer under cold water removes natural bitter saponins. Toasting the dry quinoa in the saucepan for 2 minutes before adding water imparts a deep, roasted nutty profile.",
+    "isChefsPick": false
   },
   {
     "id": "baked-salmon",
@@ -228,7 +284,13 @@
     "cookMinutes": 14,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Seafood", "Keto", "High Omega-3", "Dinner", "Gluten-Free"],
+    "tags": [
+      "Seafood",
+      "Keto",
+      "High Omega-3",
+      "Dinner",
+      "Gluten-Free"
+    ],
     "ingredients": [
       "2 Fresh salmon fillets (180g each, skin-on)",
       "1 bunch Fresh green asparagus, woody ends snapped",
@@ -245,7 +307,9 @@
       "Place thin lemon wheels on top of the salmon fillets.",
       "Bake for 12-14 minutes until salmon flakes effortlessly with a fork and asparagus is bright green and tender. Sprinkle fresh dill and serve."
     ],
-    "createdAt": "2026-01-22T19:20:00.000Z"
+    "createdAt": "2026-01-22T19:20:00.000Z",
+    "chefNotes": "Check salmon doneness with a digital probe thermometer—pull the fillets at 125°F for medium or 130°F for medium-well. High-heat white albumin extrusion indicates overcooking.",
+    "isChefsPick": true
   },
   {
     "id": "lentil-soup",
@@ -257,7 +321,13 @@
     "cookMinutes": 30,
     "servings": 4,
     "difficulty": "Easy",
-    "tags": ["Soup", "Vegan", "Lentils", "Fiber", "Warm & Cozy"],
+    "tags": [
+      "Soup",
+      "Vegan",
+      "Lentils",
+      "Fiber",
+      "Warm & Cozy"
+    ],
     "ingredients": [
       "1.5 cups French green or brown lentils, rinsed",
       "1 Yellow onion, diced",
@@ -278,19 +348,27 @@
       "Reduce heat to low, cover with lid, and simmer gently for 25-30 minutes until lentils are tender yet hold their shape.",
       "Stir in chopped baby kale and simmer 2 minutes until wilted. Finish with fresh lemon juice and season to taste."
     ],
-    "createdAt": "2026-01-23T11:00:00.000Z"
+    "createdAt": "2026-01-23T11:00:00.000Z",
+    "chefNotes": "Bloom your turmeric and cumin in warm olive oil before adding liquid. Fat-soluble curcumin in turmeric absorbs up to 2000% more bioavailable nutrition when bloomed with black pepper and oil.",
+    "isChefsPick": false
   },
   {
     "id": "avocado-toast",
     "title": "Artisanal Sourdough Avocado Tartine",
     "description": "Toasted sourdough brushed with garlic, topped with chunky smashed Haas avocado, soft poached egg, radishes, microgreens, and chili crisps.",
     "category": "Healthy Meals",
-    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?auto=format&fit=crop&w=1200&q=80",
     "prepMinutes": 8,
     "cookMinutes": 4,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Breakfast", "Avocado", "Sourdough", "Quick", "Brunch"],
+    "tags": [
+      "Breakfast",
+      "Avocado",
+      "Sourdough",
+      "Quick",
+      "Brunch"
+    ],
     "ingredients": [
       "2 Thick slices artisan sourdough boule",
       "2 Ripe Hass avocados",
@@ -309,7 +387,9 @@
       "Generously spread avocado mash over hot toast. Layer delicate radish ribbons and place a warm poached egg on each slice.",
       "Garnish with microgreens, chili flakes, and a sprinkle of crunchy Maldon sea salt."
     ],
-    "createdAt": "2026-01-24T09:15:00.000Z"
+    "createdAt": "2026-01-24T09:15:00.000Z",
+    "chefNotes": "Rub a halved garlic clove directly across the surface of hot, charred sourdough. The rough, toasted crumb acts like a microplane, depositing pure garlic essential oils without raw chunks.",
+    "isChefsPick": false
   },
   {
     "id": "chocolate-brownies",
@@ -321,7 +401,13 @@
     "cookMinutes": 25,
     "servings": 9,
     "difficulty": "Medium",
-    "tags": ["Baking", "Chocolate", "Indulgent", "Dessert", "Fudgy"],
+    "tags": [
+      "Baking",
+      "Chocolate",
+      "Indulgent",
+      "Dessert",
+      "Fudgy"
+    ],
     "ingredients": [
       "200g 70% Dark bittersweet chocolate, chopped",
       "150g Unsalted European butter",
@@ -339,7 +425,9 @@
       "Pour melted chocolate mixture and vanilla into eggs, folding gently with a silicone spatula.",
       "Sift flour, cocoa powder, and salt over batter. Fold just until no dry streaks remain. Pour into pan and bake for 22-25 minutes. Cool completely before slicing."
     ],
-    "createdAt": "2026-01-25T16:00:00.000Z"
+    "createdAt": "2026-01-25T16:00:00.000Z",
+    "chefNotes": "Whisking warm melted butter with eggs and sugar for 3 full minutes dissolves the sucrose crystals, which migrates to the surface during baking to produce that iconic paper-thin, shiny crinkly brownie crust.",
+    "isChefsPick": true
   },
   {
     "id": "strawberry-cheesecake",
@@ -351,7 +439,13 @@
     "cookMinutes": 55,
     "servings": 8,
     "difficulty": "Hard",
-    "tags": ["Cheesecake", "Strawberry", "Baking", "Dessert", "Celebration"],
+    "tags": [
+      "Cheesecake",
+      "Strawberry",
+      "Baking",
+      "Dessert",
+      "Celebration"
+    ],
     "ingredients": [
       "500g Philadelphia cream cheese, softened",
       "1.5 cups Graham cracker crumbs",
@@ -369,7 +463,9 @@
       "Pour cheesecake batter over crust. Dollop strawberry puree across the surface and draw gentle figure-8 swirls with a wooden skewer.",
       "Bake in a water bath for 50-55 minutes until edges are set and center gently jiggles. Turn off oven, crack door open for 1 hour, then chill overnight."
     ],
-    "createdAt": "2026-01-26T14:00:00.000Z"
+    "createdAt": "2026-01-26T14:00:00.000Z",
+    "chefNotes": "Baking cheesecake inside a gentle bain-marie (water bath) keeps oven humidity at 100% and regulates temperature, preventing unsightly cracks across the velvety cream cheese surface.",
+    "isChefsPick": true
   },
   {
     "id": "banana-pancakes",
@@ -381,7 +477,13 @@
     "cookMinutes": 12,
     "servings": 2,
     "difficulty": "Easy",
-    "tags": ["Pancakes", "Banana", "Breakfast", "Dessert", "Sweet"],
+    "tags": [
+      "Pancakes",
+      "Banana",
+      "Breakfast",
+      "Dessert",
+      "Sweet"
+    ],
     "ingredients": [
       "2 Very ripe bananas, peeled and mashed",
       "2 Free-range eggs",
@@ -399,19 +501,27 @@
       "Pour 1/4 cup batter per pancake. Cook for 2.5 minutes until surface bubbles form and edges look matte.",
       "Carefully flip and cook for 1-2 minutes more until golden brown and cooked through. Stack high with butter, banana slices, and warm maple syrup."
     ],
-    "createdAt": "2026-01-27T08:00:00.000Z"
+    "createdAt": "2026-01-27T08:00:00.000Z",
+    "chefNotes": "Do not overmix the pancake batter—small lumpy pockets of flour are desirable! Overworking the batter develops gluten, making pancakes tough instead of cloud-soft and airy.",
+    "isChefsPick": false
   },
   {
     "id": "mango-pudding",
     "title": "Silky Tropical Alphonso Mango Pudding",
     "description": "Refreshing and creamy chilled mango pudding infused with fragrant coconut milk, sweet Alphonso puree, and juicy fresh mango cubes.",
     "category": "Desserts",
-    "imageUrl": "https://images.unsplash.com/photo-1546069901-d70311c1e5f8?auto=format&fit=crop&w=1200&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1200&q=80",
     "prepMinutes": 15,
     "cookMinutes": 5,
     "servings": 4,
     "difficulty": "Easy",
-    "tags": ["Mango", "Chilled", "No-Bake", "Summer", "Gluten-Free"],
+    "tags": [
+      "Mango",
+      "Chilled",
+      "No-Bake",
+      "Summer",
+      "Gluten-Free"
+    ],
     "ingredients": [
       "2 cups Sweet ripe Alphonso mango pulp",
       "1 cup Coconut cream or whole milk",
@@ -428,7 +538,9 @@
       "Pour into glass dessert cups or ramekins. Refrigerate for at least 3-4 hours until softly set.",
       "Garnish each glass with freshly diced sweet mango cubes and a vibrant sprig of fresh mint before serving cool."
     ],
-    "createdAt": "2026-01-27T10:30:00.000Z"
+    "createdAt": "2026-01-27T10:30:00.000Z",
+    "chefNotes": "Use fresh ripe Alphonso or Ataulfo mangoes with low fiber. Dissolve gelatin in warm water without boiling it, as temperatures above 175°F degrade gelatin's protein binding strength.",
+    "isChefsPick": false
   },
   {
     "id": "apple-crumble",
@@ -440,7 +552,13 @@
     "cookMinutes": 35,
     "servings": 6,
     "difficulty": "Medium",
-    "tags": ["Apples", "Baking", "Comfort Food", "Autumn", "Warm"],
+    "tags": [
+      "Apples",
+      "Baking",
+      "Comfort Food",
+      "Autumn",
+      "Warm"
+    ],
     "ingredients": [
       "5 Honeycrisp or Granny Smith apples, peeled, cored, and sliced",
       "1 tbsp Fresh lemon juice",
@@ -459,6 +577,685 @@
       "Scatter crumble generously over apples.",
       "Bake for 30-35 minutes until fruit is bubbly and topping is deeply golden and fragrant. Serve warm with a generous scoop of vanilla bean ice cream."
     ],
-    "createdAt": "2026-01-27T12:00:00.000Z"
+    "createdAt": "2026-01-27T12:00:00.000Z",
+    "chefNotes": "Toss tart Granny Smith apples with a touch of cornstarch and lemon juice. The starch binds apple juices into a luscious caramel gel under the crisp, buttery streusel topping.",
+    "isChefsPick": false
+  },
+  {
+    "id": "pan-seared-sea-bass",
+    "title": "Pan-Seared Chilean Sea Bass with Saffron Cauliflower Purée",
+    "description": "Shattering-crisp skin Chilean sea bass served over a velvety saffron-infused cauliflower purée, glazed charred asparagus, and fresh Meyer lemon brown butter.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": [
+      "Sea Bass",
+      "Healthy",
+      "Gluten-Free",
+      "Low Carb",
+      "Gourmet",
+      "Keto"
+    ],
+    "ingredients": [
+      "2 fresh Chilean sea bass fillets (6oz / 170g each), skin-on and scaled",
+      "1 medium head fresh cauliflower, cut into small florets",
+      "1 pinch Spanish saffron threads (approx 20 threads)",
+      "1/2 cup organic low-sodium chicken bone broth",
+      "2 tbsp European unsalted butter",
+      "1 bunch fresh thin asparagus spears, trimmed",
+      "1 tbsp cold-pressed avocado oil (high smoke point)",
+      "Juice of 1 fresh Meyer lemon",
+      "Flaky Maldon sea salt and freshly cracked white pepper",
+      "Microgreen arugula for plating garnish"
+    ],
+    "instructions": [
+      "Pat fish fillets bone-dry with paper towels and score the skin with three shallow diagonal cuts. Season generously with kosher salt and let rest at room temperature for 10 minutes.",
+      "Steam cauliflower florets with saffron and bone broth in a covered pot over medium heat for 12-14 minutes until knife-tender.",
+      "Transfer cauliflower and saffron liquid to a high-speed blender; blend on high for 2 minutes with 1 tbsp butter and lemon juice until silken.",
+      "Heat a heavy cast-iron skillet over high heat with avocado oil until smoking hot. Lay fish skin-side down; press gently with a fish spatula for 30 seconds to prevent curling, then sear undisturbed for 5-6 minutes until skin is shattering-crisp.",
+      "Flip gently, baste with foaming butter and thyme sprigs for 2-3 minutes until internal temperature hits 135°F. Rest on a warm plate for 3 minutes before spooning over warm saffron purée."
+    ],
+    "chefNotes": "Chilean Sea Bass contains high levels of healthy Omega-3 fatty acids. Scoring the skin releases steam and prevents buckling in the skillet. Pressing the fillet down for the initial 30 seconds guarantees 100% skin contact with the searing surface.",
+    "createdAt": "2026-02-01T10:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "artisanal-bone-broth-pho",
+    "title": "Simmered Grass-Fed Beef Bone Broth Pho",
+    "description": "Michelin-grade 2.5-hour Vietnamese beef pho crafted with grass-fed marrow bones, charred ginger, star anise, tender rice noodles, and rare shaved eye of round.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 35,
+    "cookMinutes": 150,
+    "servings": 4,
+    "difficulty": "Hard",
+    "tags": [
+      "Pho",
+      "Bone Broth",
+      "Vietnamese",
+      "Collagen Rich",
+      "Healthy",
+      "High Protein"
+    ],
+    "ingredients": [
+      "1.5 kg grass-fed beef marrow and knuckle bones",
+      "300g USDA Prime beef eye of round, paper-thin sliced",
+      "4 whole star anise pods, 1 3-inch cinnamon stick, 1 black cardamom",
+      "1 large yellow onion, halved unpeeled",
+      "4-inch piece fresh ginger root, halved lengthwise",
+      "3 tbsp premium Vietnamese fish sauce (Red Boat 40N)",
+      "1 oz yellow rock sugar (or raw cane sugar)",
+      "400g fresh pho flat rice noodles",
+      "2 cups fresh bean sprouts, Thai basil, and culantro (sawtooth herb)",
+      "1 fresh lime, cut into wedges, plus sliced bird's eye chilies"
+    ],
+    "instructions": [
+      "Blanch beef marrow bones in a large stockpot of boiling water for 10 minutes to purge impurities; drain thoroughly and rinse under cold water.",
+      "Char halved yellow onion and unpeeled ginger under an oven broiler or over an open gas flame for 8-10 minutes until blackened and aromatic; scrape off excess char.",
+      "Toast star anise, cinnamon stick, coriander seeds, and black cardamom in a dry skillet over medium heat for 3-4 minutes until fragrant; place into a cotton spice sachet.",
+      "Return cleaned bones, charred aromatics, and spice sachet to stockpot filled with 4 liters of filtered water. Bring to a boil, then reduce heat to low and simmer gently uncovered for 120-150 minutes, skimming foam regularly.",
+      "Season broth with fish sauce and rock sugar. Cook fresh pho noodles in boiling water for 20-30 seconds, divide into heated bowls, top with raw sliced beef, and ladle boiling broth directly over the beef to cook it instantly."
+    ],
+    "chefNotes": "Blanching the bones and rigorously skimming the surface during the first 30 minutes of simmering produces a pristine, crystal-clear broth rich in bioavailable collagen and minerals without cloudiness.",
+    "createdAt": "2026-02-02T11:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "moroccan-tagine-chickpeas",
+    "title": "Slow-Simmered Moroccan Vegetable & Chickpea Tagine",
+    "description": "A deeply aromatic North African stew of slow-simmered chickpeas, tender sweet potatoes, preserved lemon, and warm ras el hanout spices, crowned with toasted almonds.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "servings": 4,
+    "difficulty": "Medium",
+    "tags": [
+      "Vegan",
+      "Moroccan",
+      "Plant-Based",
+      "Fiber Rich",
+      "Healthy",
+      "Gluten-Free"
+    ],
+    "ingredients": [
+      "2 cans (400g each) organic chickpeas, rinsed and drained",
+      "2 medium jewel sweet potatoes, peeled and cut into 1-inch cubes",
+      "1 large zucchini, sliced into 1/2-inch thick half-moons",
+      "1 can (400g) San Marzano crushed tomatoes",
+      "2 tbsp traditional ras el hanout spice blend",
+      "1 tsp organic ground turmeric and 1/2 tsp ground cinnamon",
+      "1 whole preserved lemon rind, pulp removed and finely minced",
+      "1/3 cup golden sultana raisins",
+      "2 cups low-sodium vegetable broth",
+      "1/4 cup sliced blanched almonds, toasted until golden"
+    ],
+    "instructions": [
+      "In a traditional clay tagine or heavy Dutch oven, heat olive oil over medium-low heat. Sauté diced yellow onion, grated garlic, and ras el hanout for 4-5 minutes until aromatic.",
+      "Add diced sweet potatoes, carrots, and turmeric. Stir to coat in spices and cook for 5 minutes.",
+      "Pour in crushed tomatoes, vegetable stock, chickpeas, and golden raisins. Bring to a simmer, cover with the conical lid, and simmer gently for 25-30 minutes until vegetables are meltingly tender.",
+      "Fold in sliced zucchini and finely diced preserved lemon peel; simmer uncovered for 8-10 minutes until zucchini is tender and sauce is glossy.",
+      "Garnish with toasted sliced almonds and fresh chopped cilantro. Serve warm over steamed fluffy couscous or quinoa."
+    ],
+    "chefNotes": "Preserved lemon rind is the authentic soul of North African tagine—its lacto-fermented brininess cuts through the natural sweetness of sweet potatoes and caramelized golden raisins.",
+    "createdAt": "2026-02-03T12:00:00.000Z",
+    "isChefsPick": false
+  },
+  {
+    "id": "herb-crusted-rack-of-lamb",
+    "title": "Dijon & Pistachio-Crusted Grass-Fed Lamb Rack",
+    "description": "Tender Australian grass-fed rack of lamb seared in duck fat, brushed with spicy Dijon, and coated in a vibrant pistachio-herb crust, roasted to rosy perfection.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "servings": 3,
+    "difficulty": "Hard",
+    "tags": [
+      "Lamb",
+      "Gourmet",
+      "Keto",
+      "High Protein",
+      "Paleo",
+      "Fine Dining"
+    ],
+    "ingredients": [
+      "1 full rack of lamb (8 bones, approx 750g), French-trimmed",
+      "1/2 cup raw shelled pistachios, finely chopped",
+      "2 tbsp Grey Poupon Dijon mustard",
+      "1/4 cup panko breadcrumbs (or crushed pork rinds for keto)",
+      "2 tbsp fresh rosemary and flat-leaf parsley, finely minced",
+      "2 cloves garlic, microplaned",
+      "2 tbsp extra virgin olive oil",
+      "1 cup sweet baby peas for purée accompaniment",
+      "Coarse sea salt and freshly cracked black peppercorns"
+    ],
+    "instructions": [
+      "Preheat oven to 400°F (200°C). Season trimmed rack of lamb all over with kosher salt and cracked black pepper; let come to room temperature for 15 minutes.",
+      "Heat olive oil in an oven-safe cast iron pan over high heat. Sear the lamb fat-cap down for 4-5 minutes until deeply browned and rendered; sear remaining sides for 2 minutes.",
+      "Transfer lamb to a cutting board and brush the fat cap generously with smooth Dijon mustard.",
+      "Press crushed pistachio, rosemary, garlic, and panko mixture firmly into the mustard glaze to create an even, thick green crust.",
+      "Roast in the oven for 12-15 minutes until an instant-read thermometer inserted into the center reads 130°F for medium-rare. Rest on a carving board for 8-10 minutes before slicing between the rib bones."
+    ],
+    "chefNotes": "Resting the lamb is mandatory—during the 10-minute rest, muscle fibers relax and redistribute juices, and carryover cooking will raise internal temperature to an ideal 135°F.",
+    "createdAt": "2026-02-04T13:00:00.000Z",
+    "isChefsPick": false
+  },
+  {
+    "id": "french-macarons",
+    "title": "French Pâtisserie Raspberry Rose Macarons",
+    "description": "Artisanal Parisian macaron shells with delicate ruffled feet, filled with a lush freeze-dried raspberry and organic rosewater white chocolate ganache.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 60,
+    "cookMinutes": 18,
+    "servings": 12,
+    "difficulty": "Hard",
+    "tags": [
+      "French",
+      "French Pastry",
+      "Baking",
+      "Macarons",
+      "Gourmet",
+      "Artisanal"
+    ],
+    "ingredients": [
+      "100g superfine blanched almond flour",
+      "100g pure confectioner's powdered sugar",
+      "75g aged egg whites (at room temperature)",
+      "65g fine granulated sugar",
+      "1/4 tsp cream of tartar",
+      "1 tbsp freeze-dried raspberry powder",
+      "120g Valrhona 34% white chocolate callets",
+      "50ml heavy whipping cream (36% fat)",
+      "1/2 tsp pure culinary organic rosewater"
+    ],
+    "instructions": [
+      "Pulse almond flour and confectioners sugar in a food processor for 1 minute; sift twice through a fine-mesh sieve to discard coarse bits.",
+      "In a spotlessly clean metal bowl, whip aged egg whites and cream of tartar on medium speed for 3 minutes until foamy; gradually add granulated sugar while whipping on high for 5-6 minutes until stiff, glossy peaks form.",
+      "Perform the macaronage: fold dry sifted ingredients into the meringue in three batches with a silicone spatula, folding until batter flows in a continuous ribbon forming a figure-8, about 45-50 folds.",
+      "Pipe 1.5-inch rounds onto parchment-lined baking sheets; rap sheets firmly against the counter 4 times to release air bubbles. Let dry undisturbed for 35-45 minutes until a dry skin forms that does not stick to a gentle touch.",
+      "Bake at 300°F (150°C) for 14-16 minutes until ruffled feet form and shells don't wobble. Cool completely on the sheet for 20 minutes before filling with raspberry rose white chocolate ganache."
+    ],
+    "chefNotes": "The resting step is non-negotiable—allowing a matte skin to dry on the surface forces the rising steam out through the bottom edges during baking, creating the quintessential crisp frilly macaron feet ('le pied').",
+    "createdAt": "2026-02-05T14:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "classic-tiramisu",
+    "title": "Artisanal Venetian Mascarpone & Espresso Tiramisù",
+    "description": "Traditional northern Italian tiramisù prepared with double-whipped egg yolk sabayon, imported Galbani mascarpone, espresso-dipped ladyfingers, and Valrhona cocoa.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 35,
+    "cookMinutes": 0,
+    "servings": 8,
+    "difficulty": "Medium",
+    "tags": [
+      "Italian",
+      "Coffee",
+      "No Bake",
+      "Dessert",
+      "Classic",
+      "Tiramisu"
+    ],
+    "ingredients": [
+      "500g Italian Galbani Mascarpone cheese (room temperature)",
+      "4 large farm-fresh egg yolks (pasteurized)",
+      "100g superfine caster sugar",
+      "24 crisp Italian Savoiardi ladyfingers",
+      "1.5 cups freshly brewed dark espresso, cooled",
+      "2 tbsp Marsala wine or dark spiced rum",
+      "1 tsp Madagascar vanilla bean paste",
+      "3 tbsp high-fat Dutch-process unsweetened cocoa powder"
+    ],
+    "instructions": [
+      "Brew 1.5 cups of strong dark espresso; stir in 2 tbsp Marsala wine and let cool to room temperature for 15 minutes.",
+      "In a heatproof bowl set over a pot of barely simmering water (bain-marie), whisk egg yolks and sugar continuously for 6-8 minutes until pale, thickened, and doubled in volume (reaching 160°F for food safety).",
+      "Remove from heat and gently fold room-temperature mascarpone and vanilla paste into the warm sabayon until smooth and lump-free, about 2-3 minutes.",
+      "Quickly dip each Savoiardi ladyfinger into the cooled espresso mixture for exactly 1-2 seconds per side; arrange in a snug single layer in an 8x8 ceramic baking dish.",
+      "Spread half of the mascarpone cream over the ladyfingers. Repeat with a second dipped ladyfinger layer and top with remaining cream. Dust generously with Dutch cocoa powder and chill in refrigerator for 240-360 minutes (4-6 hours) to set."
+    ],
+    "chefNotes": "Never soak ladyfingers for more than 2 seconds; they are extremely porous and will turn soggy. A brisk dip allows the center of the cookie to soften gradually from the moisture of the mascarpone cream overnight.",
+    "createdAt": "2026-02-06T15:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "grand-marnier-souffle",
+    "title": "Classic French Grand Marnier Orange Soufflé",
+    "description": "A spectacular, cloud-light French dessert soufflé that rises over two inches above the ramekin rim, infused with fresh orange zest and French cognac liqueur.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1539755530862-00f623c00f52?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 35,
+    "cookMinutes": 18,
+    "servings": 4,
+    "difficulty": "Hard",
+    "tags": [
+      "French",
+      "Soufflé",
+      "Dessert",
+      "Baking",
+      "Fine Dining",
+      "Citrus"
+    ],
+    "ingredients": [
+      "250ml whole milk",
+      "3 large egg yolks and 4 large egg whites (room temperature)",
+      "40g European unsalted butter, plus extra for ramekins",
+      "40g unbleached pastry flour",
+      "60g fine granulated sugar, plus extra for coating ramekins",
+      "3 tbsp Grand Marnier French cognac liqueur",
+      "Zest of 2 organic naval oranges, finely grated",
+      "1/4 tsp cream of tartar",
+      "Powdered confectioners sugar for final dusting"
+    ],
+    "instructions": [
+      "Brush the inside of 4 ramekins with softened butter using upward vertical strokes; dust with granulated sugar, tapping out excess, and chill in the fridge for 10 minutes.",
+      "Cook milk, flour, butter, and sugar in a heavy saucepan over medium heat for 3-4 minutes to make a thick pastry cream base; remove from heat, whisk in egg yolks, orange zest, and Grand Marnier, then let cool for 10 minutes.",
+      "Whip room-temperature egg whites with cream of tartar and 2 tbsp sugar for 4-5 minutes until glossy medium-firm peaks form.",
+      "Whisk 1/3 of the whipped egg whites into the pastry base to lighten it; then gently fold the remaining whites in two additions with a spatula until just incorporated.",
+      "Fill prepared ramekins to the brim, level off with a straight palette knife, and run your thumbnail around the rim to create a 2mm gutter. Bake at 375°F (190°C) for 15-18 minutes undisturbed until risen 2 inches above the rim."
+    ],
+    "chefNotes": "Vertical butter brush strokes and the thumbnail rim gutter prevent the delicate batter from sticking to the porcelain edges, ensuring straight, dramatic, skyscraper-high vertical rises.",
+    "createdAt": "2026-02-07T16:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "matcha-lava-cake",
+    "title": "Molten Uji Matcha White Chocolate Lava Cakes",
+    "description": "Individual warm Japanese green tea cakes with crisp edges that break open into an irresistible, flowing river of molten emerald matcha white chocolate.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": [
+      "Matcha",
+      "Japanese",
+      "Lava Cake",
+      "Chocolate",
+      "Dessert",
+      "Indulgent"
+    ],
+    "ingredients": [
+      "100g premium white chocolate (minimum 32% cocoa butter)",
+      "60g unsalted European butter",
+      "2 large eggs plus 1 egg yolk (room temperature)",
+      "35g confectioners powdered sugar",
+      "1.5 tbsp ceremonial grade Uji matcha green tea powder",
+      "30g organic cake flour (sifted)",
+      "1/2 tsp pure vanilla extract",
+      "Pinch of fine sea salt"
+    ],
+    "instructions": [
+      "Preheat oven to 400°F (200°C). Generously grease 2 ceramic ramekins with butter and dust with matcha powder; tap out excess.",
+      "Melt white chocolate and unsalted butter in a heatproof bowl set over a gentle water bath for 4-5 minutes, stirring until silky smooth.",
+      "Whisk whole eggs, extra egg yolk, confectioners sugar, and vanilla in a mixing bowl for 2-3 minutes until frothy.",
+      "Sift matcha powder and cake flour into the melted chocolate mixture, then fold into the egg mixture until just combined without overmixing.",
+      "Divide batter into ramekins and bake for 11-13 minutes until edges are set and cake slightly puffs but the center remains soft to the touch. Let rest for 2 minutes, then invert onto serving plates."
+    ],
+    "chefNotes": "The secret to the molten center is timing: overbaking by even 90 seconds will cook through the white chocolate core. Pull them from the oven the moment the top edge is matte but the center jiggles gently.",
+    "createdAt": "2026-02-08T17:00:00.000Z",
+    "isChefsPick": false
+  },
+  {
+    "id": "beef-wellington",
+    "title": "Classic Prime Beef Wellington with Truffled Duxelles",
+    "description": "The crowning jewel of British culinary art: center-cut beef tenderloin wrapped in truffled mushroom duxelles, salty prosciutto, and buttery golden puff pastry.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "servings": 4,
+    "difficulty": "Hard",
+    "tags": [
+      "Beef",
+      "Wellington",
+      "Fine Dining",
+      "Holiday",
+      "Gourmet",
+      "British"
+    ],
+    "ingredients": [
+      "750g center-cut USDA Prime beef tenderloin (chateaubriand)",
+      "500g fresh cremini and shiitake mushrooms",
+      "8 thin slices Prosciutto di Parma",
+      "1 sheet all-butter puff pastry (thawed)",
+      "2 tbsp English Colman's hot mustard",
+      "2 shallots and 3 cloves garlic, finely minced",
+      "2 sprigs fresh thyme leaves, stripped",
+      "1 tsp black truffle oil",
+      "2 large egg yolks beaten with 1 tsp milk (for egg wash)",
+      "Flaky Maldon sea salt and freshly cracked black peppercorns"
+    ],
+    "instructions": [
+      "Sear seasoned beef tenderloin in a smoking-hot skillet with avocado oil for 60-90 seconds per side until deeply browned; immediately brush all over with English mustard and chill for 15 minutes.",
+      "Pulse mushrooms with thyme, garlic, and shallot into fine mince. Sauté in a dry skillet over medium-high heat for 12-15 minutes until all moisture evaporates into a dense duxelles; stir in truffle oil and cool completely.",
+      "Overlap sheets of plastic wrap on a work surface. Lay prosciutto slices, spread chilled mushroom duxelles evenly, place seared tenderloin in the center, and roll into a tight cylinder; chill in fridge for 20 minutes to hold shape.",
+      "Roll out all-butter puff pastry on lightly floured surface. Unwrap beef cylinder, place onto pastry, wrap tightly, crimp edges, and brush all over with beaten egg yolk wash. Score decorative lattice lines with the back of a knife.",
+      "Bake at 425°F (220°C) for 28-32 minutes until pastry is deep golden brown and meat thermometer reads 125°F. Rest on a cutting board for 10-12 minutes before carving thick medallions."
+    ],
+    "chefNotes": "Moisture is the enemy of crisp Wellington pastry. Cooking the duxelles until completely dry prevents the bottom pastry from turning soggy during the high-heat bake.",
+    "createdAt": "2026-02-09T18:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "saffron-seafood-paella",
+    "title": "Authentic Valencian Saffron Seafood Paella",
+    "description": "Traditional Spanish paella with toasted Bomba rice, jumbo tiger prawns, Mediterranean blue mussels, sweet smoked paprika, and a crunchy golden caramelized socarrat bottom.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "servings": 4,
+    "difficulty": "Medium",
+    "tags": [
+      "Spanish",
+      "Paella",
+      "Seafood",
+      "Rice",
+      "Saffron",
+      "Traditional"
+    ],
+    "ingredients": [
+      "350g authentic Spanish Bomba or Calasparra rice",
+      "8 large raw jumbo tiger prawns, shell-on",
+      "400g fresh Mediterranean mussels, scrubbed and debearded",
+      "100g cured Spanish chorizo sausage, sliced into rounds",
+      "4 cups rich homemade seafood or fish bone stock",
+      "1 generous pinch Spanish La Mancha saffron threads",
+      "1 tbsp sweet smoked Spanish pimentón (paprika)",
+      "1 cup crushed ripe Roma tomatoes",
+      "1/2 cup sweet green peas and sliced roasted piquillo peppers",
+      "Fresh lemon wedges and extra virgin olive oil"
+    ],
+    "instructions": [
+      "Steep saffron threads in 1 cup of warm seafood stock for 10 minutes to bloom the golden color and earthy aroma.",
+      "In a wide 15-inch carbon steel paella pan, heat olive oil over medium-high heat. Sear jumbo prawns for 2 minutes per side; remove and set aside.",
+      "Add sliced chorizo, diced onions, and garlic to the pan, cooking for 4-5 minutes until the fragrant red paprika oils render.",
+      "Add Spanish Bomba rice and smoked paprika, stirring for 2 minutes to toast the grains. Pour in warm saffron stock and tomatoes; shake the pan gently to distribute evenly—do not stir again!",
+      "Simmer over medium heat for 15 minutes, arrange mussels and seared prawns on top, and cook for 8-10 minutes until liquid is absorbed and you hear the crackling sound of the crispy socarrat forming on the bottom. Rest for 5 minutes before serving with fresh lemon."
+    ],
+    "chefNotes": "Never stir Spanish paella once the stock begins to simmer! Stirring releases amylopectin starch and creates risotto texture instead of the prized golden caramelized bottom crust ('socarrat').",
+    "createdAt": "2026-02-10T19:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "wagyu-steak-rossini",
+    "title": "Wagyu Beef Steak Rossini",
+    "description": "A5 Japanese Wagyu striploin crowned with pan-seared foie gras, black truffle shavings, and a rich Périgueux Madeira wine reduction — the pinnacle of steak elegance.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "servings": 2,
+    "difficulty": "Hard",
+    "isChefsPick": true,
+    "tags": [
+      "Steak",
+      "Wagyu",
+      "French",
+      "Fine Dining",
+      "Beef"
+    ],
+    "ingredients": [
+      "2 × 200g A5 Japanese Wagyu striploin steaks",
+      "2 thick slices grade-A duck foie gras (80g each)",
+      "20g fresh black Périgord truffles, shaved",
+      "1 cup Madeira wine",
+      "1 cup brown veal stock",
+      "2 shallots, finely minced",
+      "2 tbsp unsalted Normandy butter",
+      "Flaky Maldon sea salt and freshly cracked white peppercorns",
+      "1 tbsp avocado oil for searing"
+    ],
+    "instructions": [
+      "Remove Wagyu steaks from refrigerator 45 minutes before cooking. Pat completely dry with paper towels — moisture prevents the Maillard crust.",
+      "Heat a cast iron skillet until smoking. Season Wagyu generously with Maldon salt and white pepper. Sear 90 seconds per side for medium-rare (internal 52°C); rest uncovered on a wire rack for 8 minutes.",
+      "In the same pan, sear seasoned foie gras slices over high heat, 45 seconds per side until deep golden. Remove immediately to rest.",
+      "Deglaze pan with Madeira, reducing by two-thirds over medium heat. Add veal stock and shallots; reduce to a glossy nappe consistency. Mount with cold butter off heat.",
+      "Plate rested Wagyu, crown with seared foie gras, cascade Périgueux sauce over the top, and finish with fresh black truffle shavings. Serve immediately."
+    ],
+    "chefNotes": "Wagyu has an extremely low melt point for its intramuscular fat. Even residual hand heat can begin rendering it. Work quickly from fridge to plate and never exceed medium-rare internally.",
+    "createdAt": "2026-03-01T18:00:00.000Z"
+  },
+  {
+    "id": "lobster-bisque-royale",
+    "title": "Classic Lobster Bisque Royale",
+    "description": "Velvety French bisque made from scratch with whole Atlantic lobsters, roasted shell fumet, aged Cognac flambé, and a swirl of double cream — silky, intensely shellfish.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "servings": 4,
+    "difficulty": "Hard",
+    "isChefsPick": true,
+    "tags": [
+      "Soup",
+      "Lobster",
+      "French",
+      "Seafood",
+      "Bisque"
+    ],
+    "ingredients": [
+      "2 live Atlantic lobsters (700g each)",
+      "3 tbsp Cognac (for flambé)",
+      "1 cup dry white wine (Muscadet)",
+      "1 can (400g) whole San Marzano tomatoes",
+      "2 medium carrots and 2 stalks celery, diced",
+      "1 large onion and 4 cloves garlic",
+      "3 tbsp tomato paste",
+      "1 bouquet garni (thyme, bay leaf, tarragon)",
+      "300ml double cream (48% fat)",
+      "4 tbsp unsalted butter",
+      "Sea salt, white pepper, and cayenne"
+    ],
+    "instructions": [
+      "Halve live lobsters and remove claws. Roast shells and bodies in a 220°C oven for 15 minutes until shells turn deep red and caramelized — this is the flavor foundation.",
+      "In a large stockpot, sauté mirepoix (carrot, celery, onion) in butter over medium heat for 8 minutes. Add garlic and tomato paste, cook 3 minutes until the paste darkens.",
+      "Add roasted lobster shells and bodies. Pour in Cognac and carefully flambé — tilt pan to ignite alcohol; let flames subside naturally (30 seconds).",
+      "Add white wine, San Marzano tomatoes, bouquet garni, and 1.5L cold water. Simmer gently for 35 minutes, skimming regularly.",
+      "Strain bisque through a fine-mesh sieve, pressing all liquid from shells. Return to pan, add double cream, season generously, and simmer 5 minutes. Serve with reserved lobster meat chunks and a tarragon garnish."
+    ],
+    "chefNotes": "Never boil the bisque after adding cream — the proteins in cream curdle and break the emulsion at high heat. Maintain a gentle simmer below 85°C for a perfectly smooth, velvety texture.",
+    "createdAt": "2026-03-05T14:00:00.000Z"
+  },
+  {
+    "id": "korean-fire-chicken",
+    "title": "Korean Buldak Fire Chicken",
+    "description": "Ultra-spicy Korean fire chicken glazed in a glossy gochujang-gochugaru lava sauce, broiled until caramelized and sticky, topped with molten cheese and spring onions.",
+    "category": "Quick & Easy",
+    "imageUrl": "https://images.unsplash.com/photo-1604908177453-7462950a6a3b?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 22,
+    "servings": 3,
+    "difficulty": "Medium",
+    "isChefsPick": true,
+    "tags": [
+      "Korean",
+      "Spicy",
+      "Chicken",
+      "Buldak",
+      "Street Food"
+    ],
+    "ingredients": [
+      "700g boneless chicken thighs, cut into 3cm cubes",
+      "3 tbsp gochujang (Korean fermented chilli paste)",
+      "2 tbsp gochugaru (Korean red pepper flakes)",
+      "3 tbsp soy sauce",
+      "2 tbsp honey",
+      "1 tbsp sesame oil",
+      "6 cloves garlic, minced",
+      "1 tsp fresh ginger, grated",
+      "150g mozzarella cheese, shredded",
+      "Spring onions, toasted sesame seeds for garnish"
+    ],
+    "instructions": [
+      "Whisk together gochujang, gochugaru, soy sauce, honey, sesame oil, garlic, and ginger into a fiery buldak sauce.",
+      "Toss chicken pieces in half the sauce and let marinate for 20 minutes at room temperature (or up to 4 hours refrigerated).",
+      "Heat a heavy cast-iron skillet or grill pan over high heat. Sear marinated chicken for 4 minutes per side until deeply charred and cooked through to 75°C internal.",
+      "Pour remaining buldak sauce over chicken, tossing to coat every piece. Cook 2 more minutes on high heat until sauce reduces and lacquers the chicken.",
+      "Transfer to an oven-safe dish, scatter mozzarella over the top, and broil on high for 3-4 minutes until cheese is bubbling, golden, and slightly charred. Garnish with spring onions and sesame seeds. Serve over steamed white rice."
+    ],
+    "chefNotes": "The secret to authentic buldak is the double-cook method: first char the chicken to develop smoky depth, then coat in fresh sauce and finish under the broiler. Never add the sauce during the initial sear or it burns rather than caramelizes.",
+    "createdAt": "2026-03-10T12:00:00.000Z"
+  },
+  {
+    "id": "miso-black-cod",
+    "title": "Nobu-Style Miso Black Cod",
+    "description": "Black cod fillets marinated for 48 hours in sweet white Kyoto miso, sake, and mirin, then broiled until lacquered bronze with a caramelized umami crust — Nobu's most iconic dish.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "servings": 2,
+    "difficulty": "Medium",
+    "isChefsPick": true,
+    "tags": [
+      "Japanese",
+      "Fish",
+      "Miso",
+      "Nobu",
+      "Fine Dining",
+      "Healthy"
+    ],
+    "ingredients": [
+      "2 × 180g black cod fillets (sablefish), skin on",
+      "120g sweet white Kyoto shiro miso paste",
+      "3 tbsp mirin (Japanese sweet rice wine)",
+      "3 tbsp sake",
+      "2 tbsp caster sugar",
+      "Pickled ginger and micro shiso for garnish",
+      "Toasted sesame seeds"
+    ],
+    "instructions": [
+      "Gently warm mirin and sake together in a small saucepan until the alcohol evaporates (1 minute). Stir in white miso and sugar until completely dissolved and silky smooth. Cool completely — this is the den miso marinade.",
+      "Pat cod fillets completely dry. Coat all surfaces generously with den miso marinade, cover tightly, and refrigerate for 48 hours minimum (72 hours optimal) — patience is essential.",
+      "When ready to cook, scrape excess marinade from fillets gently with a spatula (don't rinse — you want residual miso for caramelization).",
+      "Place fillets skin-side down on a foil-lined baking sheet. Broil on high (240°C) for 10-12 minutes until the surface caramelizes deep mahogany brown and flesh is opaque and flaky.",
+      "Rest 3 minutes. Plate with pickled ginger, micro shiso, and a light sesame sprinkle. The flesh should pull apart in silky, butter-soft flakes."
+    ],
+    "chefNotes": "The 48-hour miso cure fundamentally transforms the fish texture via osmosis — drawing out moisture while the amino acids in miso begin breaking down surface proteins, creating an incomparably silky interior. Never cut this time short.",
+    "createdAt": "2026-03-15T09:00:00.000Z"
+  },
+  {
+    "id": "chocolate-fondant-valrhona",
+    "title": "Valrhona Chocolate Fondant",
+    "description": "Warm-centred Valrhona dark chocolate fondant with an explosively molten core, served with vanilla bean Chantilly and flaky Maldon salt — the definitive restaurant chocolate dessert.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 25,
+    "cookMinutes": 12,
+    "servings": 4,
+    "difficulty": "Hard",
+    "isChefsPick": true,
+    "tags": [
+      "Dessert",
+      "Chocolate",
+      "French",
+      "Fondant",
+      "Fine Dining"
+    ],
+    "ingredients": [
+      "200g Valrhona Guanaja 70% dark chocolate, finely chopped",
+      "150g unsalted Normandy butter, plus extra for moulds",
+      "4 large free-range eggs + 4 egg yolks",
+      "160g caster sugar",
+      "60g T55 flour, sifted",
+      "Pinch of Maldon sea salt flakes",
+      "Cocoa powder for dusting moulds",
+      "Vanilla bean Chantilly cream to serve"
+    ],
+    "instructions": [
+      "Butter 4 individual 150ml ramekins meticulously, chill, then dust with cocoa powder. This creates a non-stick barrier — the fondant must release cleanly.",
+      "Melt Valrhona chocolate with butter in a bain-marie (bowl over barely simmering water, bowl not touching water) until completely smooth and glossy. Cool to 35°C.",
+      "Whisk eggs, extra yolks, and caster sugar in a stand mixer on high for 6 minutes until pale, tripled in volume, and the ribbon falls in thick strands.",
+      "Fold the chocolate-butter mixture into the egg foam in three additions using a large silicone spatula, working with a J-fold to preserve maximum air. Sift flour over the top, fold in with a Maldon salt pinch until just combined.",
+      "Divide batter among prepared ramekins, cover with cling film, and refrigerate for at least 2 hours (up to 24 hours). Bake from cold at 200°C for exactly 11-12 minutes — the perimeter should be set firm while the centre should wobble like a jelly when gently shaken. Rest 1 minute, run a thin knife around the edge, and invert onto warm plates. Serve within 60 seconds."
+    ],
+    "chefNotes": "The exact bake time is the only variable that matters. Your oven must be fully preheated and at accurate temperature. An underbaked fondant is soup; an overbaked one is cake. Test with one ramekin first and adjust by 30-second increments.",
+    "createdAt": "2026-03-20T16:00:00.000Z"
+  },
+  {
+    "id": "french-onion-soup",
+    "title": "Classic French Onion Soup Gratinée",
+    "description": "Richly caramelized sweet yellow onions simmered in deeply savory beef broth and dry French white wine, ladled over crusty toasted baguette and broiled with bubbling Gruyère cheese.",
+    "category": "Healthy Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "servings": 4,
+    "difficulty": "Medium",
+    "tags": [
+      "French",
+      "Soup",
+      "Classic",
+      "Cheese",
+      "Comfort Food"
+    ],
+    "ingredients": [
+      "5 large Yellow onions, thinly sliced",
+      "3 tbsp French unsalted butter",
+      "2 tbsp Extra virgin olive oil",
+      "1/2 cup Dry white wine",
+      "6 cups Rich beef bone broth",
+      "2 sprigs Fresh thyme",
+      "1 Bay leaf",
+      "8 thick slices French baguette, toasted",
+      "2 cups Aged French Gruyère cheese, grated"
+    ],
+    "instructions": [
+      "Melt butter with olive oil in a heavy Dutch oven over medium-low heat. Add sliced onions and cook slowly for 35-40 minutes, stirring frequently until deeply golden brown and sweet.",
+      "Deglaze the pot with dry white wine, scraping up all browned fond from the bottom.",
+      "Pour in beef bone broth, thyme sprigs, and bay leaf. Bring to a simmer and cook uncovered for 20 minutes.",
+      "Ladle hot soup into oven-safe ceramic crocks. Top each crock with 2 toasted baguette slices and a generous mound of grated Gruyère cheese.",
+      "Broil under high heat for 3-5 minutes until the cheese is bubbling, melted, and flecked with golden blisters."
+    ],
+    "chefNotes": "Patience is key: never rush caramelized onions on high heat. Slow caramelization unlocks the natural sugars that form the backbone of authentic French bistro onion soup.",
+    "createdAt": "2026-02-08T12:00:00.000Z",
+    "isChefsPick": true
+  },
+  {
+    "id": "french-crepes-suzette",
+    "title": "French Crêpes Suzette au Grand Marnier",
+    "description": "Paper-thin, golden lace French crêpes flambéed in a luscious caramel sauce infused with freshly squeezed blood orange juice, lemon zest, and Grand Marnier liqueur.",
+    "category": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1200&q=80",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "servings": 4,
+    "difficulty": "Medium",
+    "tags": [
+      "French",
+      "Crêpes",
+      "Dessert",
+      "Citrus",
+      "Bistro"
+    ],
+    "ingredients": [
+      "1 cup All-purpose flour",
+      "2 Large farm-fresh eggs",
+      "1.25 cups Whole milk",
+      "2 tbsp Melted French butter",
+      "1/4 cup Granulated sugar",
+      "1/2 cup Fresh orange juice",
+      "Zest of 1 orange and 1 lemon",
+      "3 tbsp Grand Marnier French cognac liqueur",
+      "2 tbsp Cognac or brandy for flambé"
+    ],
+    "instructions": [
+      "Whisk flour, eggs, milk, and melted butter in a blender until completely smooth; rest batter for 15 minutes.",
+      "Heat a lightly buttered nonstick crêpe pan over medium-high heat. Pour 3 tbsp batter, tilting quickly to coat in a thin, translucent circle. Cook 60 seconds per side until golden lace edges form.",
+      "In a wide skillet, caramelize sugar over medium heat until amber; swirl in butter, orange juice, and citrus zests to create the Suzette sauce.",
+      "Fold each crêpe into quarters (triangles) and coat gently in the warm bubbling citrus caramel.",
+      "Warm Grand Marnier and cognac in a ladle, carefully ignite, and pour flaming liqueur over the crêpes. Serve immediately while warm."
+    ],
+    "chefNotes": "Letting the crêpe batter rest allows the gluten to relax and starch granules to swell, ensuring delicate, tear-resistant crêpes that melt on the tongue.",
+    "createdAt": "2026-02-09T14:00:00.000Z",
+    "isChefsPick": false
   }
 ]

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/favorites/presentation/providers/favorites_providers.dart';
 import '../../core/theme/app_colors.dart';
+import 'bounce_tap.dart';
 import 'glass_card.dart';
 
 class FavoriteButton extends ConsumerStatefulWidget {
@@ -84,10 +85,19 @@ class _FavoriteButtonState extends ConsumerState<FavoriteButton>
     );
 
     if (!widget.isGlass) {
-      return IconButton(
-        tooltip: isFavorite ? 'Remove from favorites' : 'Add to favorites',
-        onPressed: _handleTap,
-        icon: heartWidget,
+      return Semantics(
+        label: isFavorite
+            ? 'Remove recipe from favorites'
+            : 'Save recipe to favorites',
+        button: true,
+        child: BounceTap(
+          onTap: _handleTap,
+          shrinkScale: 0.85,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: heartWidget,
+          ),
+        ),
       );
     }
 
@@ -96,16 +106,19 @@ class _FavoriteButtonState extends ConsumerState<FavoriteButton>
           ? 'Remove recipe from favorites'
           : 'Save recipe to favorites',
       button: true,
-      child: GlassSurface(
-        borderRadius: 50,
-        blur: 16,
-        padding: const EdgeInsets.all(8),
-        backgroundColor: isFavorite
-            ? AppColors.softCoral.withValues(alpha: 0.25)
-            : Colors.black.withValues(alpha: 0.28),
-        borderColor: Colors.white.withValues(alpha: 0.35),
+      child: BounceTap(
         onTap: _handleTap,
-        child: heartWidget,
+        shrinkScale: 0.85,
+        child: GlassSurface(
+          borderRadius: 50,
+          blur: 16,
+          padding: const EdgeInsets.all(8),
+          backgroundColor: isFavorite
+              ? AppColors.softCoral.withValues(alpha: 0.25)
+              : Colors.black.withValues(alpha: 0.28),
+          borderColor: Colors.white.withValues(alpha: 0.35),
+          child: heartWidget,
+        ),
       ),
     );
   }

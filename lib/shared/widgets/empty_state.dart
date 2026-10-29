@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
+import 'app_logo_badge.dart';
 
 class EmptyState extends StatelessWidget {
   final IconData icon;
@@ -8,6 +9,7 @@ class EmptyState extends StatelessWidget {
   final String message;
   final String? actionLabel;
   final VoidCallback? onAction;
+  final bool showLogo;
 
   const EmptyState({
     super.key,
@@ -16,6 +18,7 @@ class EmptyState extends StatelessWidget {
     required this.message,
     this.actionLabel,
     this.onAction,
+    this.showLogo = false,
   });
 
   @override
@@ -30,19 +33,25 @@ class EmptyState extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: (isDark ? AppColors.citrusLime : AppColors.forestGreen)
-                    .withValues(alpha: 0.08),
-                shape: BoxShape.circle,
+            if (showLogo)
+              const AppLogoBadge(
+                size: 68,
+                margin: EdgeInsets.only(bottom: 20),
+              )
+            else
+              Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: (isDark ? AppColors.citrusLime : AppColors.forestGreen)
+                      .withValues(alpha: 0.08),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  icon,
+                  size: 56,
+                  color: isDark ? AppColors.citrusLime : AppColors.forestGreen,
+                ),
               ),
-              child: Icon(
-                icon,
-                size: 56,
-                color: isDark ? AppColors.citrusLime : AppColors.forestGreen,
-              ),
-            ),
             const SizedBox(height: 20),
             Text(
               title,

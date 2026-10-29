@@ -1,5 +1,6 @@
 import '../datasources/local_json_recipe_data_source.dart';
 import '../../domain/models/recipe.dart';
+import '../../domain/services/recipe_search_engine.dart';
 import '../../../submission/data/submission_repository.dart';
 
 abstract interface class RecipeRepository {
@@ -37,16 +38,12 @@ class DefaultRecipeRepository implements RecipeRepository {
     final bundled = await _localDataSource.loadRecipes();
     final localDrafts = await _submissionRepository.getLocalSubmittedDrafts();
 
-    // Combine and deduplicate by ID with submitted taking precedence
-    final Map<String, Recipe> map = {};
-    for (final r in bundled) {
-      map[r.id] = r;
-    }
-    for (final s in localDrafts) {
-      map[s.id] = s;
-    }
+    // User submissions and community creations take top priority and appear first
+    final submittedIds = localDrafts.map((s) => s.id).toSet();
+    final remainingBundled =
+        bundled.where((b) => !submittedIds.contains(b.id)).toList();
 
-    _cachedRecipes = map.values.toList();
+    _cachedRecipes = [...localDrafts.reversed, ...remainingBundled];
     return _cachedRecipes!;
   }
 
@@ -79,48 +76,13 @@ class DefaultRecipeRepository implements RecipeRepository {
     String? sortBy,
   }) async {
     final all = await getAllRecipes();
-    final cleanQuery = query.trim().toLowerCase();
-
-    var results = all.where((recipe) {
-      // 1. Query match against title, ingredients, tags, or description
-      final matchesQuery =
-          cleanQuery.isEmpty ||
-          recipe.title.toLowerCase().contains(cleanQuery) ||
-          recipe.description.toLowerCase().contains(cleanQuery) ||
-          recipe.tags.any((tag) => tag.toLowerCase().contains(cleanQuery)) ||
-          recipe.ingredients.any(
-            (ing) => ing.toLowerCase().contains(cleanQuery),
-          );
-
-      if (!matchesQuery) return false;
-
-      // 2. Category match
-      if (category != null && category.isNotEmpty && category != 'All') {
-        if (recipe.category.toLowerCase() != category.toLowerCase()) {
-          return false;
-        }
-      }
-
-      // 3. Max cook time filter
-      if (maxCookTime != null && maxCookTime > 0) {
-        if (recipe.cookMinutes > maxCookTime) {
-          return false;
-        }
-      }
-
-      return true;
-    }).toList();
-
-    // Sorting
-    if (sortBy == 'quickest') {
-      results.sort((a, b) => a.totalMinutes.compareTo(b.totalMinutes));
-    } else if (sortBy == 'prep') {
-      results.sort((a, b) => a.prepMinutes.compareTo(b.prepMinutes));
-    } else if (sortBy == 'title') {
-      results.sort((a, b) => a.title.compareTo(b.title));
-    }
-
-    return results;
+    return RecipeSearchEngine.search(
+      recipes: all,
+      query: query,
+      category: category,
+      maxCookTime: maxCookTime,
+      sortBy: sortBy,
+    );
   }
 
   @override
