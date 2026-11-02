@@ -1,0 +1,16 @@
+name: cook_mate_core
+description: "A pure Dart headless culinary engine for dynamic ingredient scaling, recipe search ranking, unit conversion, and recipe modeling."
+version: 1.0.0
+homepage: https://github.com/AbdullahAzeem12/CookMate
+repository: https://github.com/AbdullahAzeem12/CookMate/tree/main/packages/cook_mate_core
+issue_tracker: https://github.com/AbdullahAzeem12/CookMate/issues
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  # Zero external runtime dependencies for maximum compatibility and lightweight footprint
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0

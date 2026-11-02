@@ -34,10 +34,22 @@ jobs:
       - name: Install Project Dependencies
         run: flutter pub get
 
-      - name: Run Static Analysis
+      - name: Install Core Package Dependencies
+        working-directory: packages/cook_mate_core
+        run: dart pub get
+
+      - name: Run Core Package Analysis
+        working-directory: packages/cook_mate_core
+        run: dart analyze --fatal-infos
+
+      - name: Run Core Package Test Suite
+        working-directory: packages/cook_mate_core
+        run: dart test
+
+      - name: Run Root Static Analysis
         run: flutter analyze --fatal-infos
 
-      - name: Run Automated Test Suite
+      - name: Run Root Automated Test Suite
         run: flutter test --coverage
 
       - name: Check Coverage Artifact

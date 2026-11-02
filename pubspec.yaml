@@ -18,6 +18,9 @@ dependencies:
   shared_preferences: ^2.5.6
   uuid: ^4.6.0
 
+  cook_mate_core:
+    path: packages/cook_mate_core
+
   args: ^2.7.0
   cached_network_image: ^4.0.5
   image_picker: ^1.2.4
