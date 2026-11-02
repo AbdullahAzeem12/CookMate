@@ -1,0 +1,29 @@
+name: 💡 Feature Request
+description: Suggest an idea or culinary enhancement for CookMate
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for sharing your ideas to make CookMate better!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a problem or missing culinary workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Culinary Feature
+      description: Describe the feature, API, or UI component you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: A clear description of any alternative solutions or features you've considered.
+    validations:
+      required: false
+
